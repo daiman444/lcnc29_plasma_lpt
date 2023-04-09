@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding:UTF-8 -*-
 
+import os
+import hal  # needed to make our own hal pins
+import hal_glib  # needed to make our own hal pins
+import gtk
 import linuxcnc
-import hal
-import gi
-gi.require_version('GTK', '3.0')
 
-from gi.repository import Gtk as gtk
+from gladevcp.persistence import IniFile  # we use this one to save the states of the widgets on shut down and restart
+from gladevcp.persistence import widget_defaults
+from gladevcp.persistence import select_widgets
+from gmoccapy import preferences
+from gmoccapy import getiniinfo
 
-from gladevcp.persistence import IniFile, widget_defaults, select_widgets, set_debug
+GSTAT = hal_glib.GStat()
+STATUS = linuxcnc.stat()
+COMMANDS = linuxcnc.command()
+INIPATH = os.environ.get('INI_FILE_NAME', '/dev/null')
 
-#import gtk
 
 class PlasmaClass:
     def __init__(self, halcomp, builder, useropts):
