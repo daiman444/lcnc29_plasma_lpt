@@ -351,7 +351,7 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Probe</property>
+                <property name="label" translatable="yes">Safe Z:</property>
                 <property name="xalign">0</property>
               </object>
               <packing>
@@ -363,7 +363,7 @@
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Probe</property>
+                <property name="label" translatable="yes">Search vel.:</property>
                 <property name="xalign">0</property>
               </object>
               <packing>
@@ -372,7 +372,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="lbl_safe_z">
+                <property name="name">lbl_safe_z</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">val</property>
@@ -383,7 +384,8 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="lbl_search_vel">
+                <property name="name">lbl_search_vel</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">val</property>
@@ -454,8 +456,9 @@
             <property name="can-focus">False</property>
             <property name="homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="btn_set_coord_x5">
+              <object class="GtkButton" id="btn_feed_back">
                 <property name="label" translatable="yes">BACK</property>
+                <property name="name">btn_feed_back</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -467,10 +470,11 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel">
+              <object class="GtkLabel" id="lbl_feed">
+                <property name="name">lbl_feed</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
-                <property name="label" translatable="yes">Probe</property>
+                <property name="label" translatable="yes">val</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -479,8 +483,9 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_set_coord_x6">
+              <object class="GtkButton" id="btn_feed_fwd">
                 <property name="label" translatable="yes">FORWARD</property>
+                <property name="name">btn_feed_fwd</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -578,8 +583,9 @@
                     <property name="can-focus">False</property>
                     <property name="column-homogeneous">True</property>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x9">
+                      <object class="GtkButton" id="btn_correction_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_correction_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -603,6 +609,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_correction">
+                        <property name="name">lbl_correction</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -626,6 +633,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_corner_lock">
+                        <property name="name">lbl_corner_lock</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -637,6 +645,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_pierce">
+                        <property name="name">lbl_pierce</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -672,6 +681,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_pierce_delay">
+                        <property name="name">lbl_pierce_delay</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -682,8 +692,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x11">
+                      <object class="GtkButton" id="btn_corner_lock_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_corner_lock_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -694,8 +705,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x12">
+                      <object class="GtkButton" id="btn_pierce_delay_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_pierce_delay_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -706,8 +718,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x13">
+                      <object class="GtkButton" id="btn_pierce_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_pierce_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -718,8 +731,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x10">
+                      <object class="GtkButton" id="btn_correction_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_correction_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -730,8 +744,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x14">
+                      <object class="GtkButton" id="btn_corner_lock_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_corner_lock_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -742,8 +757,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x15">
+                      <object class="GtkButton" id="btn_pierce_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_pierce_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -754,8 +770,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x16">
+                      <object class="GtkButton" id="btn_pierce_delay_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_pierce_delay_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -803,6 +820,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_jump">
+                        <property name="name">lbl_jump</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -814,6 +832,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_purge">
+                        <property name="name">lbl_purge</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -825,6 +844,7 @@
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_cut">
+                        <property name="name">lbl_cut</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -835,8 +855,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x17">
+                      <object class="GtkButton" id="btn_jump_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_jump_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -847,8 +868,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x18">
+                      <object class="GtkButton" id="btn_cut_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_cut_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -859,8 +881,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x19">
+                      <object class="GtkButton" id="btn_purge_plus">
                         <property name="label" translatable="yes">+</property>
+                        <property name="name">btn_purge_plus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -871,8 +894,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x20">
+                      <object class="GtkButton" id="btn_jump_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_jump_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -883,8 +907,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x21">
+                      <object class="GtkButton" id="btn_cut_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_cut_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
@@ -895,8 +920,9 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_set_coord_x22">
+                      <object class="GtkButton" id="btn_purge_minus">
                         <property name="label" translatable="yes">-</property>
+                        <property name="name">btn_purge_minus</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
                         <property name="receives-default">True</property>
