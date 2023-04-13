@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
 # -*- coding:UTF-8 -*-
+# TODO nado razobratca s importom gtk!!!!!!!
+
 
 import os
-import hal
-import hal_glib
 import linuxcnc
-import gladevcp.persistence
-# TODO how to gi
+import hal_glib
+import hal
 import gi
-gi.require_version('Gtk', '3.0')
-gi.require_version('Gdk', '3.0')
-#from gi.repository import Gtk
-#from gi.overrides import Gtk
-#from gi.repository import Gdk
-#from gi.repository import GdkPixbuf
-#from gi.repository import GLib
+gi.require_version("Gtk", "3.0")
+gi.require_version("Gdk", "3.0")
+
+from gi.repository import Gtk
+from gladevcp.persistence import IniFile  # we use this one to save the states of the widgets on shut down and restart
+from gladevcp.persistence import widget_defaults
+from gladevcp.persistence import select_widgets
+from gmoccapy import preferences
+from gmoccapy import getiniinfo
 
 from hal_glib import GStat, GPin
 
@@ -28,47 +30,59 @@ class PlasmaClass:
         self.useropts = useropts
         self.command = linuxcnc.command()
         self.inifile = linuxcnc.ini(INIPATH)
-        self.defs = {"pierce_val": 7.0,
-                     "pierce_max": 15.0,
-                     "pierce_min": 1.0,
-                     "pierce_incr": 0.5,
-                     "jump_val": 0.0,
-                     "jump_max": 15.0,
-                     "jump_min": 0.0,
-                     "jump_incr": 0.5,
-                     "cut_val": 9.0,
-                     "cut_max": 15.0,
-                     "cut_min": 0.0,
-                     "cut_incr": 0.5,
-                     "pierce_delay_val": 0.0,
-                     "pierce_delay_max": 5.0,
-                     "pierce_delay_min": 0.0,
-                     "pierce_delay_incr": 0.1,
-                     "safe_z_val": 30.0,
-                     "safe_z_max": 100.0,
-                     "safe_z_min": 0.0,
-                     "safe_z_incr": 5.0,
-                     "search_vel_val": 750.0,
-                     "search_vel_max": 1000.0,
-                     "search_vel_min": 100.0,
-                     "search_vel_incr": 50.0,
-                     "purge_val": 13.0,
-                     "purge_max": 20.0,
-                     "purge_min": 0.0,
-                     "purge_incr": 1.0,
-                     "correction_val": 20.0,
-                     "correction_max": 100.0,
-                     "correction_min": 0.0,
-                     "correction_incr": 5.0,
-                     "corner_lock_val": 90.0,
-                     "corner_lock_max": 100.0,
-                     "corner_lock_min": 0.0,
-                     "corner_lock_incr": 5.0,
-                     "feed_direct_val": 1,
-                     "feed_direct_max": 1,
-                     "feed_direct_min": -1,
-                     "feed_direct_incr": 1,
+        self.defaults = {IniFile.vars: {"pierce_val": 7.0,
+                                        "pierce_max": 15.0,
+                                        "pierce_min": 1.0,
+                                        "pierce_incr": 0.5,
+                                        "jump_val": 0.0,
+                                        "jump_max": 15.0,
+                                        "jump_min": 0.0,
+                                        "jump_incr": 0.5,
+                                        "cut_val": 9.0,
+                                        "cut_max": 15.0,
+                                        "cut_min": 0.0,
+                                        "cut_incr": 0.5,
+                                        "pierce_delay_val": 0.0,
+                                        "pierce_delay_max": 5.0,
+                                        "pierce_delay_min": 0.0,
+                                        "pierce_delay_incr": 0.1,
+                                        "safe_z_val": 30.0,
+                                        "safe_z_max": 100.0,
+                                        "safe_z_min": 0.0,
+                                        "safe_z_incr": 5.0,
+                                        "search_vel_val": 750.0,
+                                        "search_vel_max": 1000.0,
+                                        "search_vel_min": 100.0,
+                                        "search_vel_incr": 50.0,
+                                        "purge_val": 13.0,
+                                        "purge_max": 20.0,
+                                        "purge_min": 0.0,
+                                        "purge_incr": 1.0,
+                                        "correction_val": 20.0,
+                                        "correction_max": 100.0,
+                                        "correction_min": 0.0,
+                                        "correction_incr": 5.0,
+                                        "corner_lock_val": 90.0,
+                                        "corner_lock_max": 100.0,
+                                        "corner_lock_min": 0.0,
+                                        "corner_lock_incr": 5.0,
+                                        "feed_direct_val": 1,
+                                        "feed_direct_max": 1,
+                                        "feed_direct_min": -1,
+                                        "feed_direct_incr": 1,
+                                        }
                      }
+        get_ini_info = getiniinfo.GetIniInfo()
+        prefs = preferences.preferences(get_ini_info.get_preference_file_path())
+        theme_name = prefs.getpref("gtk_theme", "Follow System Theme", str)
+        if theme_name == "Follow System Theme":
+            theme_name = Gtk.settings_get_default().get_property("gtk-theme-name")
+        gtk.settings_get_default().set_string_property("gtk-theme-name", theme_name, "")
+
+
+        self.ini_filename = __name__ + ".var"
+        self.ini = IniFile(self.ini_filename, self.defaults, self.builder)
+        self.ini.restore_state(self)
 
         self.builder.get_object('table1').set_sensitive(False)
 
