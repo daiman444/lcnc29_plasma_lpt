@@ -1,6 +1,12 @@
 #!/usr/bin/env python2
 # -*- coding:UTF-8 -*-
 
+import gi
+gi.require_version('Gtk', '3.0')
+
+from gi.repository import Gtk
+
+
 import os
 import hal_glib  # needed to make our own hal pins
 import hal  # needed to make our own hal pins
