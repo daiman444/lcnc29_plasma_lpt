@@ -1,16 +1,25 @@
 # Halshow settings
 # This file is generated automatically.
+<<<<<<< HEAD
 wm geometry . 700x797+1164+134
+=======
+wm geometry . 700x475+807+215
+>>>>>>> 6655938b627015d94e62a51da83b99dd5d749646
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
+<<<<<<< HEAD
     pin+thctab.led_arc_ok
     pin+thctab.led_probe
     pin+thctab.led_thc
     pin+thctab.led_torch
 }
 set ::workmode watchhal
+=======
+}
+set ::workmode showhal
+>>>>>>> 6655938b627015d94e62a51da83b99dd5d749646
 set ::watchInterval 100
 set ::col1_width 100
 set ::ffmts 

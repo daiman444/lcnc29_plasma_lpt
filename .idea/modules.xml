@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/lcnc2_9_plasma_lpt.iml" filepath="$PROJECT_DIR$/.idea/lcnc2_9_plasma_lpt.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/plasma_lpt.iml" filepath="$PROJECT_DIR$/.idea/plasma_lpt.iml" />
+>>>>>>> 6655938b627015d94e62a51da83b99dd5d749646
     </modules>
   </component>
 </project>
