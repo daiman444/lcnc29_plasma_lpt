@@ -1,16 +1,20 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding:UTF-8 -*-
 
+import os
 import gi
 gi.require_version('Gtk', '3.0')
-
+gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk
+from gi.repository import Gdk
 
 
-import os
+gi_typelib_path = '/usr/lib/x86_64-linux-gnu/girepository-1.0/'
+os.environ['GI_TYPELIB_PATH'] = gi_typelib_path
+
 import hal_glib  # needed to make our own hal pins
 import hal  # needed to make our own hal pins
-import gtk
+#import gtk
 import linuxcnc
 
 from gladevcp.persistence import IniFile  # we use this one to save the states of the widgets on shut down and restart
