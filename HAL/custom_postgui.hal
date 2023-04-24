@@ -36,8 +36,5 @@ addf arc_ok_comp servo-thread
 
 #net feed-plus           <= hotkeys.feed_plus            => thctab.feed-dir-plus
 #net feed-minus          <= hotkeys.feed_minus           => thctab.feed-dir-minus
-<<<<<<< HEAD
 #net adaptive_feed       => motion.adaptive-feed         <= thctab.feed-dir
-=======
-#net adaptive_feed       => motion.adaptive-feed         <= thctab.feed-dir
->>>>>>> 6655938b627015d94e62a51da83b99dd5d749646
+
