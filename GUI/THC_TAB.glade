@@ -398,6 +398,7 @@
             <child>
               <object class="GtkButton" id="btn_safe_z_plus">
                 <property name="label" translatable="yes">+</property>
+                <property name="name">btn_safe_z_plus</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -410,6 +411,7 @@
             <child>
               <object class="GtkButton" id="btn_search_z_plus">
                 <property name="label" translatable="yes">+</property>
+                <property name="name">btn_search_vel_plus</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -422,6 +424,7 @@
             <child>
               <object class="GtkButton" id="btn_safe_z_minus">
                 <property name="label" translatable="yes">-</property>
+                <property name="name">btn_safe_z_minus</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -432,8 +435,9 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="btn_search_z_minus">
+              <object class="GtkButton" id="btn_search_vel_minus">
                 <property name="label" translatable="yes">-</property>
+                <property name="name">btn_search_vel_minus</property>
                 <property name="visible">True</property>
                 <property name="can-focus">True</property>
                 <property name="receives-default">True</property>
@@ -951,6 +955,57 @@
           </packing>
         </child>
         <child>
+          <object class="GtkBox">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="homogeneous">True</property>
+            <child>
+              <object class="GtkLabel" id="lbl_print1">
+                <property name="name">lbl_print1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_print2">
+                <property name="name">lbl_print2</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel" id="lbl_print3">
+                <property name="name">lbl_print3</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="label" translatable="yes">label</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">True</property>
+                <property name="position">2</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
@@ -959,7 +1014,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">7</property>
+            <property name="position">8</property>
           </packing>
         </child>
       </object>
