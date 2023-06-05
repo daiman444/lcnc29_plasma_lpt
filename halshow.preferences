@@ -1,12 +1,30 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 700x475+807+215
+wm geometry . 972x598+215+76
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
 set ::watchlist {
+    pin+CH32.0.gpio.PB4.in
+    pin+CH32.0.gpio.PB4.in-not
+    pin+CH32.0.gpio.PB4.out
+    pin+CH32.0.gpio.PB4.out-not
+    pin+CH32.0.gpio.PB5.in
+    pin+CH32.0.gpio.PB5.in-not
+    pin+CH32.0.gpio.PB5.out
+    pin+CH32.0.gpio.PB5.out-not
+    pin+CH32.0.gpio.PB4.type
+    pin+CH32.0.gpio.PE0.in
+    pin+CH32.0.gpio.PE0.in-not
+    pin+CH32.0.gpio.PE0.out
+    pin+CH32.0.gpio.PE0.out-not
+    pin+CH32.0.gpio.PB15.in
+    pin+CH32.0.gpio.PB15.in-not
+    pin+CH32.0.gpio.PB15.out
+    pin+CH32.0.gpio.PB15.out-not
+    pin+CH32.0.connected
 }
-set ::workmode showhal
+set ::workmode watchhal
 set ::watchInterval 100
 set ::col1_width 100
 set ::ffmts 
