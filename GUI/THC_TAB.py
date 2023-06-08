@@ -39,8 +39,9 @@ class PlasmaClass:
         self.stat = linuxcnc.stat()
         self.inifile = self.lcnc.ini(INIPATH)
         self.builder = builder
-        self.b_g_o = builder.get_object
+        self.b_g_o = builder.get_object()
         self.halcomp = halcomp
+        self.b_g_o('lbl_print').set_label('123')
         self.defaults = {IniFile.vars: {"pierce_hghtval": 7.0,
                                         "pierce_hghtmax": 15.0,
                                         "pierce_hghtmin": 1.0,
@@ -93,6 +94,7 @@ class PlasmaClass:
                          IniFile.widgets: widget_defaults(select_widgets([self.builder.get_object("hal-btn-THC")],
                                                                          hal_only=True, output_only=True)),
                          }
+        
         get_ini_info = getiniinfo.GetIniInfo()
         prefs = preferences.preferences(get_ini_info.get_preference_file_path())
         theme_name = prefs.getpref("gtk_theme", "Follow System Theme", str)
@@ -103,7 +105,7 @@ class PlasmaClass:
         self.ini = IniFile(self.ini_filename, self.defaults, self.builder)
         self.ini.restore_state(self)
 
-        self.b_g_o('table1').set_sensitive(False)
+        self.builder.get_object('table1').set_sensitive(False)
         GSTAT.connect('all-homed', lambda w: self.all_homed('homed'))
         GSTAT.connect('mode-auto', lambda w: self.mode_change('auto'))
         GSTAT.connect('mode-manual', lambda w: self.mode_change('manual'))
