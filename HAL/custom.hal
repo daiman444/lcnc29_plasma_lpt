@@ -38,7 +38,7 @@ net removing-offset         ahc.removing-offset
 net vel-tol                 ahc.velocity-tol
 net cor-vel                 ahc.correction-vel
 
-net spindle-enable          spindle.0.on                     CH32.0.gpio.PE0.in
+net spindle-enable          spindle.0.on                     CH32.0.gpio.PB4.control
 net deb-arc-ok-out          motion.digital-in-00
 
 #net test                    CH32.0.gpio.PB6.out             CH32.0.gpio.PB7.in

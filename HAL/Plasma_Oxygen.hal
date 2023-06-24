@@ -15,7 +15,9 @@ addf stepgen.update-freq servo-thread
 net spindle-at-speed    => spindle.0.at-speed
 
 # gpio test setup
-setp CH32.0.gpio.PE0.type 1
+setp CH32.0.gpio.PB4.type -1 # output
+#setp CH32.0.gpio.PB4.pull 1 # pull-up
+#setp CH32.0.gpio.PB4.control 1 # state = ON
 
 
 
