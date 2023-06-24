@@ -18,9 +18,10 @@ addf stepgen.update-freq servo-thread
 net spindle-at-speed    => spindle.0.at-speed
 
 # gpio test setup
-setp CH32.0.gpio.PB4.type -1
-setp CH32.0.gpio.PB5.type 1
-setp CH32.0.gpio.PA15.type 1
+setp CH32.0.gpio.PE0.type -1
+setp CH32.0.gpio.PE0.pull 1
+#setp CH32.0.gpio.PB5.type 1
+#setp CH32.0.gpio.PA15.type 1
 
 
 net estop-out <= iocontrol.0.user-enable-out
