@@ -6,22 +6,20 @@ loadrt stepgen step_type=0,0,0,0
 
 addf CH32.read servo-thread
 addf CH32.write servo-thread
+
 addf stepgen.make-pulses base-thread
-
-
 addf stepgen.capture-position servo-thread
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
 addf stepgen.update-freq servo-thread
-
-
 net spindle-at-speed    => spindle.0.at-speed
 
 # gpio test setup
-setp CH32.0.gpio.PE0.type -1
-setp CH32.0.gpio.PE0.pull 1
-#setp CH32.0.gpio.PB5.type 1
-#setp CH32.0.gpio.PA15.type 1
+setp CH32.0.gpio.PE0.type 1
+
+
+
+
 
 
 net estop-out <= iocontrol.0.user-enable-out
