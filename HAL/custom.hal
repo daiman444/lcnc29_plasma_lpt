@@ -2,11 +2,11 @@
 # This file will not be overwritten when you run PNCconf again
 
 loadrt debounce cfg=1,1,2
-addf debounce.0 servo-thread
-addf debounce.1 servo-thread
+addf debounce.0 srv
+addf debounce.1 srv
 
 loadrt ahc
-addf ahc servo-thread
+addf ahc srv
 
 # debounce probe
 #net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
@@ -38,7 +38,7 @@ net removing-offset         ahc.removing-offset
 net vel-tol                 ahc.velocity-tol
 net cor-vel                 ahc.correction-vel
 
-net spindle-enable          spindle.0.on                     CH32.0.gpio.PB4.control
+net spindle-enable          spindle.0.on                     CH32.0.gpio.PE0.control
 net deb-arc-ok-out          motion.digital-in-00
 
 #net test                    CH32.0.gpio.PB6.out             CH32.0.gpio.PB7.in

@@ -1,27 +1,29 @@
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=10 num_aio=10
 
+loadrt threads name1=srv period1=1000000000
 loadrt CH32 IP="10.10.10.10" PORT="1000" SIMULATION=0
+
 loadrt stepgen step_type=0,0,0,0
 
-addf CH32.read servo-thread
-addf CH32.write servo-thread
+addf CH32.read srv
+addf CH32.write srv
 
 addf stepgen.make-pulses base-thread
 addf stepgen.capture-position servo-thread
 addf motion-command-handler servo-thread
 addf motion-controller servo-thread
 addf stepgen.update-freq servo-thread
+
 net spindle-at-speed    => spindle.0.at-speed
 
 # gpio test setup
-setp CH32.0.gpio.PB4.type -1 # output
-#setp CH32.0.gpio.PB4.pull 1 # pull-up
-#setp CH32.0.gpio.PB4.control 1 # state = ON
-
-
-
-
+setp CH32.0.gpio.PE0.type 1 # output
+setp CH32.0.gpio.PE0.pull 1 # pull-up
+setp CH32.0.gpio.PE0.control 1 # state = ON
+setp CH32.0.gpio.PE1.type 1 # output
+setp CH32.0.gpio.PE1.pull -1 # pull-down
+setp CH32.0.gpio.PE1.control 0 # state = OFF
 
 
 net estop-out <= iocontrol.0.user-enable-out
