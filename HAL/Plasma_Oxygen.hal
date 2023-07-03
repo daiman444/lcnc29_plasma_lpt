@@ -1,7 +1,7 @@
 loadrt [KINS]KINEMATICS
 loadrt [EMCMOT]EMCMOT base_period_nsec=[EMCMOT]BASE_PERIOD servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS num_dio=10 num_aio=10
 
-loadrt threads name1=srv period1=1000000000
+loadrt threads name1=srv period1=3000000
 loadrt CH32 IP="10.10.10.10" PORT="1000" SIMULATION=0
 
 loadrt stepgen step_type=0,0,0,0
@@ -20,10 +20,10 @@ net spindle-at-speed    => spindle.0.at-speed
 # gpio test setup
 setp CH32.0.gpio.PE0.type 1 # output
 setp CH32.0.gpio.PE0.pull 1 # pull-up
-setp CH32.0.gpio.PE0.control 1 # state = ON
+#setp CH32.0.gpio.PE0.control 1 # state = ON
 setp CH32.0.gpio.PE1.type 1 # output
-setp CH32.0.gpio.PE1.pull -1 # pull-down
-setp CH32.0.gpio.PE1.control 0 # state = OFF
+setp CH32.0.gpio.PE1.pull 0 # pull-down
+#setp CH32.0.gpio.PE1.control 0 # state = OFF
 
 
 net estop-out <= iocontrol.0.user-enable-out
