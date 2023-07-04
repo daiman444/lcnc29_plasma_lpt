@@ -18,56 +18,59 @@ addf stepgen.update-freq servo-thread
 net spindle-at-speed    => spindle.0.at-speed
 
 # gpio test setup
+#spindle
 setp CH32.0.gpio.PE0.type 1 # output
 setp CH32.0.gpio.PE0.pull 1 # pull-up
-#setp CH32.0.gpio.PE0.control 1 # state = ON
+
+#JOINTS
+#enable
 setp CH32.0.gpio.PE1.type 1 # output
-setp CH32.0.gpio.PE1.pull 0 # pull-down
-#setp CH32.0.gpio.PE1.control 0 # state = OFF
+setp CH32.0.gpio.PE1.pull 1 # pull-up
 
-# stepdir test setup JOINT_0
-setp CH32.0.stepdir.0.enable 1
-setp CH32.0.stepdir.0.dir-offset 50000 # ns
-setp CH32.0.stepdir.0.step-len 5000 # ns
-setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
-setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
-setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
-setp CH32.0.stepdir.0.pos-reset 1
-net PE2 CH32.0.stepdir.0.step-pin
-net PE3 CH32.0.stepdir.0.dir-pin
+#JOINT_0
+setp CH32.0.gpio.PE2.type 1 # output
+setp CH32.0.gpio.PE2.pull 1 # pull-up
+setp CH32.0.gpio.PE3.type 1 # output
+setp CH32.0.gpio.PE3.pull 1 # pull-up
 
-# stepdir test setup JOINT_1
-setp CH32.0.stepdir.1.enable 1
-setp CH32.0.stepdir.1.dir-offset 50000 # ns
-setp CH32.0.stepdir.1.step-len 5000 # ns
-setp CH32.0.stepdir.1.max-speed 100.0 # mm/s
-setp CH32.0.stepdir.1.max-accel 1000.0 # mm/s2
-setp CH32.0.stepdir.1.pos-scale 1000.0 # steps/mm
-setp CH32.0.stepdir.1.pos-reset 1
-net PE4 CH32.0.stepdir.0.step-pin
-net PE5 CH32.0.stepdir.0.dir-pin
+#JOINT_1
+setp CH32.0.gpio.PE4.type 1 # output
+setp CH32.0.gpio.PE4.pull 1 # pull-up
+setp CH32.0.gpio.PE5.type 1 # output
+setp CH32.0.gpio.PE5.pull 1 # pull-up
 
-# stepdir test setup JOINT_2
-setp CH32.0.stepdir.2.enable 1
-setp CH32.0.stepdir.2.dir-offset 50000 # ns
-setp CH32.0.stepdir.2.step-len 5000 # ns
-setp CH32.0.stepdir.2.max-speed 100.0 # mm/s
-setp CH32.0.stepdir.2.max-accel 1000.0 # mm/s2
-setp CH32.0.stepdir.2.pos-scale 1000.0 # steps/mm
-setp CH32.0.stepdir.2.pos-reset 1
-net PE6 CH32.0.stepdir.0.step-pin
-net PE7 CH32.0.stepdir.0.dir-pin
+#JOINT_2
+setp CH32.0.gpio.PE6.type 1 # output
+setp CH32.0.gpio.PE6.pull 1 # pull-up
+setp CH32.0.gpio.PE7.type 1 # output
+setp CH32.0.gpio.PE7.pull 1 # pull-up
 
-# stepdir test setup JOINT_3
-setp CH32.0.stepdir.3.enable 1
-setp CH32.0.stepdir.3.dir-offset 50000 # ns
-setp CH32.0.stepdir.3.step-len 5000 # ns
-setp CH32.0.stepdir.3.max-speed 100.0 # mm/s
-setp CH32.0.stepdir.3.max-accel 1000.0 # mm/s2
-setp CH32.0.stepdir.3.pos-scale 1000.0 # steps/mm
-setp CH32.0.stepdir.3.pos-reset 1
-net PE8 CH32.0.stepdir.0.step-pin
-net PE9 CH32.0.stepdir.0.dir-pin
+#JOINT_3
+setp CH32.0.gpio.PE8.type 1 # output
+setp CH32.0.gpio.PE8.pull 1 # pull-up
+setp CH32.0.gpio.PE9.type 1 # output
+setp CH32.0.gpio.PE9.pull 1 # pull-up
+
+# stepdir test setup
+setp 		CH32.0.stepdir.0.dir-offset
+setp 		CH32.0.stepdir.0.dir-pin
+setp 		CH32.0.stepdir.0.max-accel		[JOINT_0]MAX_ACCELERATION
+setp 		CH32.0.stepdir.0.max-speed		[JOINT_0]MAX_VELOCITY
+setp 		CH32.0.stepdir.0.pos-cmd
+setp 		CH32.0.stepdir.0.pos-fb
+setp 		CH32.0.stepdir.0.pos-reset
+setp		CH32.0.stepdir.0.pos-scale
+setp 		CH32.0.stepdir.0.step-len
+setp 		CH32.0.stepdir.0.step-pin
+
+net PE1 	CH32.0.stepdir.0.enable
+net PE2 	CH32.0.stepdir.0.dir-pin
+net PE3 	CH32.0.stepdir.0.step-pin
+
+
+
+
+
 
 
 net estop-out <= iocontrol.0.user-enable-out
