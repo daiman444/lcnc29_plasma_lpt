@@ -20,6 +20,7 @@ setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
 setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
 setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
 setp CH32.0.stepdir.0.pos-reset 1
+
 net PB4 CH32.0.stepdir.0.step-pin
 net PA15 CH32.0.stepdir.0.dir-pin
 
