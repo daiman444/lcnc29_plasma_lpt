@@ -25,6 +25,50 @@ setp CH32.0.gpio.PE1.type 1 # output
 setp CH32.0.gpio.PE1.pull 0 # pull-down
 #setp CH32.0.gpio.PE1.control 0 # state = OFF
 
+# stepdir test setup JOINT_0
+setp CH32.0.stepdir.0.enable 1
+setp CH32.0.stepdir.0.dir-offset 50000 # ns
+setp CH32.0.stepdir.0.step-len 5000 # ns
+setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
+setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
+setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
+setp CH32.0.stepdir.0.pos-reset 1
+net PB4 CH32.0.stepdir.0.step-pin
+net PA15 CH32.0.stepdir.0.dir-pin
+
+# stepdir test setup JOINT_1
+setp CH32.0.stepdir.0.enable 1
+setp CH32.0.stepdir.0.dir-offset 50000 # ns
+setp CH32.0.stepdir.0.step-len 5000 # ns
+setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
+setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
+setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
+setp CH32.0.stepdir.0.pos-reset 1
+net PB4 CH32.0.stepdir.0.step-pin
+net PA15 CH32.0.stepdir.0.dir-pin
+
+# stepdir test setup JOINT_2
+setp CH32.0.stepdir.0.enable 1
+setp CH32.0.stepdir.0.dir-offset 50000 # ns
+setp CH32.0.stepdir.0.step-len 5000 # ns
+setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
+setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
+setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
+setp CH32.0.stepdir.0.pos-reset 1
+net PB4 CH32.0.stepdir.0.step-pin
+net PA15 CH32.0.stepdir.0.dir-pin
+
+# stepdir test setup JOINT_3
+setp CH32.0.stepdir.0.enable 1
+setp CH32.0.stepdir.0.dir-offset 50000 # ns
+setp CH32.0.stepdir.0.step-len 5000 # ns
+setp CH32.0.stepdir.0.max-speed 100.0 # mm/s
+setp CH32.0.stepdir.0.max-accel 1000.0 # mm/s2
+setp CH32.0.stepdir.0.pos-scale 1000.0 # steps/mm
+setp CH32.0.stepdir.0.pos-reset 1
+net PB4 CH32.0.stepdir.0.step-pin
+net PA15 CH32.0.stepdir.0.dir-pin
+
 
 net estop-out <= iocontrol.0.user-enable-out
 net estop-out => iocontrol.0.emc-enable-in
