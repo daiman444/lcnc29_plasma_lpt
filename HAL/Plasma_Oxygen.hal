@@ -20,58 +20,36 @@ net spindle-at-speed    => spindle.0.at-speed
 # gpio test setup
 #spindle
 setp CH32.0.gpio.PE0.type 1 # output
-setp CH32.0.gpio.PE0.pull 1 # pull-up
+#setp CH32.0.gpio.PE0.pull 1 # pull-up
 
 #JOINTS
 #enable
-setp CH32.0.gpio.PE1.type 1 # output
-setp CH32.0.gpio.PE1.pull 1 # pull-up
+setp 		CH32.0.gpio.PE1.type 			1 # output
+#setp 		CH32.0.gpio.PE1.pull 			1 # pull-up
+net enable 	CH32.0.gpio.PE1.control
 
 #JOINT_0
 setp CH32.0.gpio.PE2.type 1 # output
-setp CH32.0.gpio.PE2.pull 1 # pull-up
+#setp CH32.0.gpio.PE2.pull 1 # pull-up
+net x-step 	CH32.0.gpio.PE2.control
+
 setp CH32.0.gpio.PE3.type 1 # output
-setp CH32.0.gpio.PE3.pull 1 # pull-up
+#setp CH32.0.gpio.PE3.pull 1 # pull-up
+net x-dir 		CH32.0.gpio.PE3.control
 
-#JOINT_1
-setp CH32.0.gpio.PE4.type 1 # output
-setp CH32.0.gpio.PE4.pull 1 # pull-up
-setp CH32.0.gpio.PE5.type 1 # output
-setp CH32.0.gpio.PE5.pull 1 # pull-up
-
-#JOINT_2
-setp CH32.0.gpio.PE6.type 1 # output
-setp CH32.0.gpio.PE6.pull 1 # pull-up
-setp CH32.0.gpio.PE7.type 1 # output
-setp CH32.0.gpio.PE7.pull 1 # pull-up
-
-#JOINT_3
-setp CH32.0.gpio.PE8.type 1 # output
-setp CH32.0.gpio.PE8.pull 1 # pull-up
-setp CH32.0.gpio.PE9.type 1 # output
-setp CH32.0.gpio.PE9.pull 1 # pull-up
 
 # stepdir test setup
-setp 		CH32.0.stepdir.0.dir-offset
-setp 		CH32.0.stepdir.0.dir-pin
-setp 		CH32.0.stepdir.0.max-accel		[JOINT_0]MAX_ACCELERATION
-setp 		CH32.0.stepdir.0.max-speed		[JOINT_0]MAX_VELOCITY
-setp 		CH32.0.stepdir.0.pos-cmd
-setp 		CH32.0.stepdir.0.pos-fb
-setp 		CH32.0.stepdir.0.pos-reset
-setp		CH32.0.stepdir.0.pos-scale
-setp 		CH32.0.stepdir.0.step-len
-setp 		CH32.0.stepdir.0.step-pin
-
-net PE1 	CH32.0.stepdir.0.enable
-net PE2 	CH32.0.stepdir.0.dir-pin
-net PE3 	CH32.0.stepdir.0.step-pin
-
-
-
-
-
-
+setp 			CH32.0.stepdir.0.dir-offset		50000
+setp 			CH32.0.stepdir.0.step-len		5000
+setp 			CH32.0.stepdir.0.pos-reset		1
+setp 			CH32.0.stepdir.0.max-accel		[JOINT_0]MAX_ACCELERATION
+setp 			CH32.0.stepdir.0.max-speed		[JOINT_0]MAX_VELOCITY
+setp			CH32.0.stepdir.0.pos-scale		[JOINT_0]SCALE
+net x-pos-cmd 	CH32.0.stepdir.0.pos-cmd		joint.0.motor-pos-cmd 			joint.0.motor-pos-fb
+#net x-pos-fb	CH32.0.stepdir.0.pos-fb			joint.0.motor-pos-fb
+net enable 		CH32.0.stepdir.0.enable			joint.0.amp-enable-out
+net PE2 		CH32.0.stepdir.0.dir-pin
+net PE3 		CH32.0.stepdir.0.step-pin
 
 net estop-out <= iocontrol.0.user-enable-out
 net estop-out => iocontrol.0.emc-enable-in

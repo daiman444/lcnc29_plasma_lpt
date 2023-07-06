@@ -766,7 +766,7 @@ static int32_t comp_init()
                                   "%s.%u.stepdir.%u.pos-scale", comp_name, d, ch);
             r += hal_pin_float_newf(HAL_IN, &sdh[d][ch].pos_cmd, comp_id, 
                                   "%s.%u.stepdir.%u.pos-cmd", comp_name, d, ch);
-            r += hal_pin_float_newf(HAL_IN, &sdh[d][ch].pos_fb, comp_id, 
+            r += hal_pin_float_newf(HAL_OUT, &sdh[d][ch].pos_fb, comp_id, 
                                   "%s.%u.stepdir.%u.pos-fb", comp_name, d, ch);
             r += hal_pin_bit_newf(HAL_IN, &sdh[d][ch].pos_reset, comp_id, 
                                   "%s.%u.stepdir.%u.pos-reset", comp_name, d, ch);
@@ -801,7 +801,7 @@ static int32_t comp_init()
                                   "%s.%u.encoder.%u.find-Z", comp_name, d, ch);
             r += hal_pin_float_newf(HAL_IN, &eh[d][ch].pos_scale, comp_id, 
                                   "%s.%u.encoder.%u.pos-scale", comp_name, d, ch);
-            r += hal_pin_float_newf(HAL_IN, &eh[d][ch].pos_fb, comp_id, 
+            r += hal_pin_float_newf(HAL_OUT, &eh[d][ch].pos_fb, comp_id, 
                                   "%s.%u.encoder.%u.pos-fb", comp_name, d, ch);
             *eh[d][ch].pos_scale = 1;
              ep[d][ch].pos_scale = 1;
