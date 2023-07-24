@@ -2,22 +2,22 @@
 # This file will not be overwritten when you run PNCconf again
 
 loadrt debounce cfg=1,1,2
-addf debounce.0 servo-thread
-addf debounce.1 servo-thread
+addf debounce.0 srv
+addf debounce.1 srv
 
 loadrt ahc
-addf ahc servo-thread
+addf ahc srv
 
 # debounce probe
-net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
+#net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
 net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 5
 
-net thcu                    parport.0.pin-12-in-not
-net thcd                    parport.0.pin-13-in-not
+#net thcu                    parport.0.pin-12-in-not
+#net thcd                    parport.0.pin-13-in-not
 
 # debounce arc_ok
-net deb-thc2-arc-ok-in      debounce.1.0.in                 parport.0.pin-11-in
+#net deb-thc2-arc-ok-in      debounce.1.0.in                 parport.0.pin-11-in
 net deb-arc-ok-out          debounce.1.0.out
 setp                        debounce.1.delay                5
 ###
@@ -38,15 +38,17 @@ net removing-offset         ahc.removing-offset
 net vel-tol                 ahc.velocity-tol
 net cor-vel                 ahc.correction-vel
 
-net spindle-enable          spindle.0.on                    parport.0.pin-17-out
+net spindle-enable          spindle.0.on                     CH32.0.gpio.PE0.control
 net deb-arc-ok-out          motion.digital-in-00
 
-unlinkp                     joint.3.motor-pos-cmd
-net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
+#net test                    CH32.0.gpio.PB6.out             CH32.0.gpio.PB7.in
 
-unlinkp                     stepgen.3.position-cmd
-net z-pos-out               ahc.z-pos-out                   stepgen.3.position-cmd
+#unlinkp                     joint.3.motor-pos-cmd
+#net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
 
-unlinkp                     stepgen.3.position-fb
-net zpos-fb                 ahc.z-fb-out                    joint.3.motor-pos-fb
+#unlinkp                     stepgen.3.position-cmd
+#net z-pos-out               ahc.z-pos-out                   stepgen.3.position-cmd
+
+#unlinkp                     stepgen.3.position-fb
+#net zpos-fb                 ahc.z-fb-out                    joint.3.motor-pos-fb
 
