@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Generated with glade 3.38.2 -->
 <interface>
+<<<<<<< HEAD:GUI/THC_TAB.glade
   <requires lib="gtk+" version="3.24"/>
+=======
+  <requires lib="gtk+" version="3.8"/>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
   <requires lib="gladevcp" version="0.0"/>
   <object class="GtkWindow" id="window1">
     <property name="name">window1</property>
@@ -10,6 +14,7 @@
       <object class="GtkBox">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
         <property name="orientation">vertical</property>
         <child>
           <!-- n-columns=4 n-rows=3 -->
@@ -137,6 +142,9 @@
             <property name="position">0</property>
           </packing>
         </child>
+=======
+        <property name="n-rows">7</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
         <child>
           <object class="GtkFrame" id="frame2">
             <property name="visible">True</property>
@@ -467,6 +475,7 @@ G92 Z0
                     </child>
                     <child>
                       <object class="GtkLabel" id="lbl_safe_z">
+                        <property name="name">lbl_safe_z</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <property name="label" translatable="yes">val</property>
@@ -573,7 +582,7 @@ G92 Z0
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkHSeparator" id="hseparator5">
+                      <object class="GtkSeparator">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                       </object>
@@ -597,9 +606,15 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">1</property>
+=======
+            <property name="top-attach">1</property>
+            <property name="bottom-attach">2</property>
+            <property name="y-options"/>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
           </packing>
         </child>
         <child>
@@ -706,9 +721,15 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">3</property>
+=======
+            <property name="top-attach">2</property>
+            <property name="bottom-attach">3</property>
+            <property name="y-options"/>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
           </packing>
         </child>
         <child>
@@ -763,6 +784,7 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">5</property>
@@ -774,11 +796,24 @@ G92 Z0
         <child>
           <!-- n-columns=3 n-rows=3 -->
           <object class="GtkGrid">
+=======
+            <property name="top-attach">3</property>
+            <property name="bottom-attach">4</property>
+            <property name="y-options"/>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkHBox" id="hbox4">
+            <property name="height-request">20</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <child>
               <object class="GtkLabel" id="lbl_print">
+<<<<<<< HEAD:GUI/THC_TAB.glade
                 <property name="name">lbl_print</property>
+=======
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
@@ -834,22 +869,34 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">7</property>
+=======
+            <property name="top-attach">4</property>
+            <property name="bottom-attach">5</property>
+            <property name="y-options"/>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
           </packing>
         </child>
         <child>
           <object class="GtkFrame">
             <property name="visible">True</property>
             <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="label-xalign">0</property>
             <property name="shadow-type">none</property>
+=======
+            <property name="n-rows">2</property>
+            <property name="n-columns">7</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
             <child>
               <!-- n-columns=4 n-rows=15 -->
               <object class="GtkGrid">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                 <property name="row-spacing">1</property>
                 <property name="column-spacing">5</property>
                 <child>
@@ -862,6 +909,16 @@ G92 Z0
                     <property name="hexpand">True</property>
                     <property name="label" translatable="yes">Коррекция, %:</property>
                     <property name="xalign">0</property>
+=======
+                <property name="spacing">5</property>
+                <child>
+                  <object class="GtkLabel" id="label10">
+                    <property name="name">label10</property>
+                    <property name="width-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Probe</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -869,11 +926,19 @@ G92 Z0
                   </packing>
                 </child>
                 <child>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                   <object class="GtkLabel" id="lbl_cor_vel">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <property name="hexpand">True</property>
                     <property name="label" translatable="yes">val</property>
+=======
+                  <object class="GtkLabel" id="label11">
+                    <property name="width-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Torch</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
@@ -881,6 +946,7 @@ G92 Z0
                   </packing>
                 </child>
                 <child>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                   <object class="GtkButton" id="btn_cor_vel_plus">
                     <property name="label" translatable="yes">+</property>
                     <property name="width-request">25</property>
@@ -890,6 +956,13 @@ G92 Z0
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <signal name="pressed" handler="btn_cor_vel_pressed" swapped="no"/>
+=======
+                  <object class="GtkLabel" id="label12">
+                    <property name="width-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">Arc</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">2</property>
@@ -897,6 +970,7 @@ G92 Z0
                   </packing>
                 </child>
                 <child>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                   <object class="GtkButton" id="btn_cor_vel_minus">
                     <property name="label" translatable="yes">-</property>
                     <property name="width-request">25</property>
@@ -906,22 +980,50 @@ G92 Z0
                     <property name="receives-default">True</property>
                     <property name="hexpand">True</property>
                     <signal name="pressed" handler="btn_cor_vel_pressed" swapped="no"/>
+=======
+                  <object class="GtkLabel" id="label15">
+                    <property name="width-request">40</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="label" translatable="yes">THC</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">3</property>
                     <property name="top-attach">1</property>
                   </packing>
                 </child>
+<<<<<<< HEAD:GUI/THC_TAB.glade
+=======
+              </object>
+              <packing>
+                <property name="right-attach">7</property>
+                <property name="y-options"/>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkHButtonBox" id="hbuttonbox5">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="spacing">5</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                 <child>
                   <object class="GtkLabel" id="label26">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                     <property name="tooltip-text" translatable="yes">Минимальная скорость жвижения
 при которой допускается корректировка
 зазора.
 </property>
                     <property name="label" translatable="yes">Допуск скорости, %:</property>
                     <property name="xalign">0</property>
+=======
+                    <property name="tooltip-text" translatable="yes">Индикация срабатывания датчика касания</property>
+                    <property name="led-blink-rate">0</property>
+                    <property name="off-color">green</property>
+                    <property name="on-color">red</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -932,7 +1034,12 @@ G92 Z0
                   <object class="GtkLabel" id="lbl_vel_tol">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                     <property name="label" translatable="yes">val</property>
+=======
+                    <property name="tooltip-text" translatable="yes">Индикация включения резака</property>
+                    <property name="led-blink-rate">0</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">1</property>
@@ -945,9 +1052,15 @@ G92 Z0
                     <property name="width-request">25</property>
                     <property name="height-request">25</property>
                     <property name="visible">True</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <signal name="pressed" handler="btn_vel_tol_pressed" swapped="no"/>
+=======
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Индикация разрешения резки</property>
+                    <property name="led-blink-rate">0</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">2</property>
@@ -960,19 +1073,66 @@ G92 Z0
                     <property name="width-request">25</property>
                     <property name="height-request">25</property>
                     <property name="visible">True</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                     <property name="can-focus">True</property>
                     <property name="receives-default">True</property>
                     <signal name="pressed" handler="btn_vel_tol_pressed" swapped="no"/>
+=======
+                    <property name="can-focus">False</property>
+                    <property name="tooltip-text" translatable="yes">Индикация включения контроля высоты</property>
+                    <property name="led-blink-rate">0</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">3</property>
                     <property name="top-attach">3</property>
                   </packing>
                 </child>
+<<<<<<< HEAD:GUI/THC_TAB.glade
+=======
+              </object>
+              <packing>
+                <property name="right-attach">7</property>
+                <property name="top-attach">1</property>
+                <property name="bottom-attach">2</property>
+                <property name="y-options"/>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="y-options"/>
+          </packing>
+        </child>
+        <child>
+          <object class="HAL_Label" id="PlasmaCUT.kz">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label" translatable="yes">PlasmaCUT.kz</property>
+            <property name="text-template">PlasmaCUT.kz</property>
+          </object>
+          <packing>
+            <property name="top-attach">6</property>
+            <property name="bottom-attach">7</property>
+            <property name="y-options"/>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFrame" id="frame1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="label-xalign">0</property>
+            <property name="shadow-type">none</property>
+            <child>
+              <object class="GtkAlignment" id="alignment1">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="left-padding">12</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                 <child>
                   <object class="GtkLabel" id="label7">
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                     <property name="tooltip-text" translatable="yes">Высота прожига в мм.</property>
                     <property name="halign">start</property>
                     <property name="label" translatable="yes">Прожиг, мм.:</property>
@@ -1194,6 +1354,537 @@ G92 Z0
                     <property name="tooltip-text" translatable="yes">Высота резки. На нее выходит резак после подпрыжки и выдержки задержки прожига</property>
                     <property name="label" translatable="yes">Резка, мм.:</property>
                     <property name="xalign">0</property>
+=======
+                    <property name="n-rows">16</property>
+                    <property name="n-columns">4</property>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator20">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">10</property>
+                        <property name="bottom-attach">11</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator21">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">12</property>
+                        <property name="bottom-attach">13</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_cut_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">11</property>
+                        <property name="bottom-attach">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cut_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_cut_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">11</property>
+                        <property name="bottom-attach">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cut_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_cut_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">11</property>
+                        <property name="bottom-attach">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator24">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">15</property>
+                        <property name="bottom-attach">16</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_stop_del">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">13</property>
+                        <property name="bottom-attach">14</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_stop_del_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_stop_del_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">13</property>
+                        <property name="bottom-attach">14</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_stop_del_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_stop_del_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">13</property>
+                        <property name="bottom-attach">14</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator12">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label19">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Задержка на продувку для охлаждение резака</property>
+                        <property name="label" translatable="yes">Продувка, сек.:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">13</property>
+                        <property name="bottom-attach">14</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label18">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Высота резки. На нее выходит резак после подпрыжки и выдержки задержки прожига</property>
+                        <property name="label" translatable="yes">Резка, мм.:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">11</property>
+                        <property name="bottom-attach">12</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label25">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Скорость коррекции зазора.
+Задается в % от максимальной скорости оси Z </property>
+                        <property name="label" translatable="yes">Коррекция, %:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">1</property>
+                        <property name="bottom-attach">2</property>
+                        <property name="y-options"/>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_cor_vel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">1</property>
+                        <property name="bottom-attach">2</property>
+                        <property name="y-options"/>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cor_vel_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_cor_vel_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">1</property>
+                        <property name="bottom-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cor_vel_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_cor_vel_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">1</property>
+                        <property name="bottom-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator18">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">6</property>
+                        <property name="bottom-attach">7</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_jump_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_jump_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">9</property>
+                        <property name="bottom-attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_jump_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_jump_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">9</property>
+                        <property name="bottom-attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_jump_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">9</property>
+                        <property name="bottom-attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label8">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Подпрыжка на заданную высоту от высоты прожига.
+Необходима для прожига толстых листов плазмой</property>
+                        <property name="label" translatable="yes">Подпрыжка, мм.:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">9</property>
+                        <property name="bottom-attach">10</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_pierce_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">5</property>
+                        <property name="bottom-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_pierce_hght_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">5</property>
+                        <property name="bottom-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_pierce_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">5</property>
+                        <property name="bottom-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label7">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Высота прожига в мм.</property>
+                        <property name="label" translatable="yes">Прожиг, мм.:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">5</property>
+                        <property name="bottom-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_vel_tol_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_vel_tol_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">3</property>
+                        <property name="bottom-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_vel_tol_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_vel_tol_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">3</property>
+                        <property name="bottom-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_vel_tol">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">3</property>
+                        <property name="bottom-attach">4</property>
+                        <property name="y-options"/>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label26">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Минимальная скорость жвижения
+при которой допускается корректировка
+зазора.
+</property>
+                        <property name="label" translatable="yes">Допуск скорости, %:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">3</property>
+                        <property name="bottom-attach">4</property>
+                        <property name="y-options"/>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="label17">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="tooltip-text" translatable="yes">Задержка на прожиг в секундах после появляения сигнала наличия дуги</property>
+                        <property name="label" translatable="yes">Прожиг, сек.:</property>
+                        <property name="xalign">0</property>
+                      </object>
+                      <packing>
+                        <property name="top-attach">7</property>
+                        <property name="bottom-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_pierce_del">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="right-attach">2</property>
+                        <property name="top-attach">7</property>
+                        <property name="bottom-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_del_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_pierce_del_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="right-attach">3</property>
+                        <property name="top-attach">7</property>
+                        <property name="bottom-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_del_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="width-request">25</property>
+                        <property name="height-request">25</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <signal name="pressed" handler="btn_pierce_del_pressed" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">7</property>
+                        <property name="bottom-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator19">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">8</property>
+                        <property name="bottom-attach">9</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator7">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">4</property>
+                        <property name="bottom-attach">5</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkHSeparator" id="hseparator8">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                      </object>
+                      <packing>
+                        <property name="right-attach">4</property>
+                        <property name="top-attach">2</property>
+                        <property name="bottom-attach">3</property>
+                      </packing>
+                    </child>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
                   </object>
                   <packing>
                     <property name="left-attach">0</property>
@@ -1334,11 +2025,17 @@ G92 Z0
               <object class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+<<<<<<< HEAD:GUI/THC_TAB.glade
                 <property name="label" translatable="yes">Прожиг:</property>
+=======
+                <property name="label" translatable="yes">&lt;b&gt;Параметры резки:&lt;/b&gt;</property>
+                <property name="use-markup">True</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
               </object>
             </child>
           </object>
           <packing>
+<<<<<<< HEAD:GUI/THC_TAB.glade
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">8</property>
@@ -1358,6 +2055,10 @@ G92 Z0
             <property name="expand">False</property>
             <property name="fill">True</property>
             <property name="position">10</property>
+=======
+            <property name="top-attach">5</property>
+            <property name="bottom-attach">6</property>
+>>>>>>> 16922468554d33fbd1b54f77419f50c4b5c49a0b:GUI/THC_TAB.ui
           </packing>
         </child>
         <child>
