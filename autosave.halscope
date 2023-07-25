@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 THREAD servo-thread
+=======
+THREAD srv
+>>>>>>> 376f8fe16a9ed721bcb0474ce265f699d3e359af
 MAXCHAN 4
 HMULT 1
 HZOOM 1
