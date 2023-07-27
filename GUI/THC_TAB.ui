@@ -7,7 +7,7 @@
     <property name="can-focus">False</property>
     <property name="valign">start</property>
     <child>
-      <object class="GtkBox">
+      <object class="GtkBox" id="main_box">
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="orientation">vertical</property>
@@ -188,7 +188,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton" id="btn_goto_zero">
+                          <object class="GtkButton" id="gotozero">
                             <property name="label" translatable="yes">Отправить в 0</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -202,7 +202,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_goto_end">
+                          <object class="GtkButton" id="gotoend">
                             <property name="label" translatable="yes">Отправить в MAX</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -227,8 +227,8 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton" id="btn_setx_zero">
-                            <property name="label" translatable="yes">X=0</property>
+                          <object class="GtkButton" id="zero-xyz">
+                            <property name="label" translatable="yes">XYZ=0</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -241,8 +241,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_sety_zero">
-                            <property name="label" translatable="yes">Y=0</property>
+                          <object class="GtkButton" id="zero-x">
+                            <property name="label" translatable="yes">X=0</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -255,8 +255,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_setz_zero">
-                            <property name="label" translatable="yes">Z=0</property>
+                          <object class="GtkButton" id="zero-y">
+                            <property name="label" translatable="yes">Y=0</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -269,8 +269,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_setxyz_zero">
-                            <property name="label" translatable="yes">XYZ=0</property>
+                          <object class="GtkButton" id="zero-z">
+                            <property name="label" translatable="yes">Z=0</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -294,7 +294,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton" id="btn_setx_coord">
+                          <object class="GtkButton" id="set_coord_x">
                             <property name="label" translatable="yes">x=</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -308,7 +308,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="ent_x_coord">
+                          <object class="GtkEntry" id="txt_set_coord_x">
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                           </object>
@@ -319,7 +319,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_sety_coord">
+                          <object class="GtkButton" id="set_coord_y">
                             <property name="label" translatable="yes">y=</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -333,7 +333,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="ent_y_coord">
+                          <object class="GtkEntry" id="txt_set_coord_y">
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                           </object>
@@ -395,7 +395,7 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkButton" id="btn_feed_bckwd">
+                          <object class="GtkButton" id="btn_feed_minus">
                             <property name="label" translatable="yes">&lt;&lt;BWD</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -409,7 +409,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="lbl_direction">
+                          <object class="GtkLabel" id="lbl_feed_dir">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="hexpand">True</property>
@@ -422,7 +422,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_setx_zero2">
+                          <object class="GtkButton" id="btn_feed_plus">
                             <property name="label" translatable="yes">FWD&gt;&gt;</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -588,6 +588,32 @@
           </packing>
         </child>
         <child>
+          <object class="GtkLabel" id="lbl_info">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">direction</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="lbl_info1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">direction</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
           <placeholder/>
         </child>
         <child>
@@ -606,7 +632,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
-                      <object class="GtkButton" id="btn_manual_plasma">
+                      <object class="GtkButton" id="tb_plasma">
                         <property name="label" translatable="yes">Plasma</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
@@ -620,7 +646,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="btn_manual_oxygen">
+                      <object class="GtkButton" id="tb_ox">
                         <property name="label" translatable="yes">Oxygen</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
@@ -651,7 +677,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">7</property>
+            <property name="position">9</property>
           </packing>
         </child>
         <child>
@@ -890,7 +916,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">9</property>
+            <property name="position">11</property>
           </packing>
         </child>
         <child>
@@ -1237,7 +1263,7 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
-            <property name="position">11</property>
+            <property name="position">13</property>
           </packing>
         </child>
         <child>

@@ -1,6 +1,6 @@
 # Halshow settings
 # This file is generated automatically.
-wm geometry . 700x475+333+146
+wm geometry . 700x475+360+145
 placeFrames 0.3
 set ::ratio 0.3
 set ::old_w_leftf 160
@@ -9,6 +9,9 @@ set ::watchlist {
     pin+thctab.led_probe-in
     pin+thctab.led_spindle-on
     pin+thctab.led_thc_enable
+    pin+thctab.feed-dir
+    pin+thctab.feed-dir-minus
+    pin+thctab.feed-dir-plus
 }
 set ::workmode watchhal
 set ::watchInterval 100
