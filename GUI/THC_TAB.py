@@ -27,11 +27,13 @@ class Panel:
     def __init__(self, halcomp, builder, useropts):
         self.lcnc = linuxcnc
         self.command = linuxcnc.command()
+        self.hglib_pin = hal_glib.GPin
+        self.halcomp = halcomp
         self.builder = builder
         self.b_g_o = builder.get_object
         self.inifile = self.lcnc.ini(INIPATH)
-        self.defs = {IniFile.vars: defaults.defaults}   
-        self.defs = self.defs[IniFile.vars]    
+        self.defaults = {IniFile.vars: defaults.defaults}   
+        self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         
         GSTAT.connect('all-homed', lambda w: self.all_homed('homed'))
@@ -72,11 +74,38 @@ class Panel:
         # declaring widgets as a list.
         # push-buttons list for change values:
         self.widgets_list = ['cor_vel', 'vel_tol', 'pierce_hght',
-                             'jump_hght', 'pierce_del', 'cut_hght',
+                             'pierce_del', 'jump_hght', 'cut_hght',
                              'stop_del', 'safe_z', 'z_speed',
                              'vsetup', 'freq_scale', 'arc_ok_min',
                              'arc_ok_max', 'periods', 'vtol', 
                              ]
+        
+        # after widgets_list declaration star the widget initialisation cycle:
+        for name in self.widgets_list:
+            # declaring defaults values to display
+            lbl = 'lbl_' + name
+            btn_plus = 'btn_' + name + '_plus'
+            btn_minus = 'btn_' + name + '_minus'
+            val = name + 'val'
+            max = name + 'max'
+            min = name + 'min'
+            self.b_g_o(lbl).set_label('%s' % self.defs[name + 'val'])
+
+            # declaring push-button '_plus' and connection to method
+            self.b_g_o(btn_plus).connect('pressed', self.widget_value_change, name, 1)
+            if self.defs[val] == self.defs[max]:
+                self.b_g_o('info1').set_label('%s' % self.defs[val])
+                self.b_g_o(btn_plus).set_sensitive(False)
+
+            # declaring push-button '_minus' and connection to method
+            self.b_g_o(btn_minus).connect('pressed', self.widget_value_change, name, -1)
+            if self.defs[val] == self.defs[min]:
+                self.b_g_o(btn_minus).set_sensitive(False)
+
+            # declaring hal pin
+            self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
+
+        
         #list to set sensitive widgets on mode auto/mdi/manual
         self.widgets_in_mode = ['gotozero', 'gotoend', 'zero-xyz',
                                 'zero-x', 'zero-y', 'zero-z',
@@ -84,7 +113,10 @@ class Panel:
                                 'txt_set_coord_y', 'tb_plasma', 'tb_ox',
                                 ]
  
- 
+        # toggle buttons
+        self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
+        self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
+        
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
@@ -145,7 +177,49 @@ class Panel:
             self.btn_feed_dir_plus.set_sensitive(True)
             self.btn_feed_dir_minus.set_sensitive(True)
             self.lbl_feed_dir.set_label('STOP')
-            
+
+    def widget_value_change(self, widget, name, value):
+        self.defs[name + 'val'] += self.defs[name + 'incr'] * value
+        if self.defs[name + 'val'] >= self.defs[name + 'max']:
+            self.defs[name + 'val'] = self.defs[name + 'max']
+            self.b_g_o('btn_' + name + '_plus').set_sensitive(False)
+        elif self.defs[name + 'val'] <= self.defs[name + 'min']:
+            self.defs[name + 'val'] = self.defs[name + 'min']
+            self.b_g_o('btn_' + name + '_minus').set_sensitive(False)
+        else:
+            self.b_g_o('btn_' + name + '_plus').set_sensitive(True)
+            self.b_g_o('btn_' + name + '_minus').set_sensitive(True)
+        if name == 'freq_scale':
+            self.b_g_o('lbl_' + name).set_label('%s' % self.defs[name + 'val'])
+            self.halcomp[name] = self.defs[name + 'val']
+        else:
+            self.b_g_o('lbl_' + name).set_label('%s' % round(self.defs[name + 'val'], 1))
+            self.halcomp[name] = round(self.defs[name + 'val'], 1)
+
+#TODO добить кнопки режима ручной резки
+    def pb_changes(self, w, d=None):
+        if w.get_active() == True and d == 'plasma':
+            self.b_g_o('tb_ox').set_active(False)
+            self.b_g_o('tb_ox').set_sensitive(False)
+            mcode = 'M64'
+            p = 'P1'
+        if w.get_active() == False and d == 'plasma':
+            self.b_g_o('tb_ox').set_sensitive(True)
+            mcode = 'M65'
+            p = 'P1'
+        if w.get_active() == True and d == 'ox':
+            self.b_g_o('tb_plasma').set_active(False)
+            self.b_g_o('tb_plasma').set_sensitive(False)
+            mcode = 'M64'
+            p = 'P2'
+        if w.get_active() == False and d == 'ox':
+            self.b_g_o('tb_plasma').set_sensitive(True)
+            mcode = 'M65'
+            p = 'P2'
+        self.command.mode(linuxcnc.MODE_MDI)
+        self.command.mdi(mcode + 'P0')
+        self.command.mdi(mcode + p)
+        self.command.mode(linuxcnc.MODE_MANUAL)
 
 def get_handlers(halcomp, builder, useropts):
     return [Panel(halcomp, builder, useropts)]
