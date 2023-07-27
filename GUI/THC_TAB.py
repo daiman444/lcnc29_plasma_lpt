@@ -30,7 +30,8 @@ class Panel:
         self.builder = builder
         self.b_g_o = builder.get_object
         self.inifile = self.lcnc.ini(INIPATH)
-        self.defs = {IniFile.vars: defaults.defaults}       
+        self.defs = {IniFile.vars: defaults.defaults}   
+        self.defs = self.defs[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         
         GSTAT.connect('all-homed', lambda w: self.all_homed('homed'))
@@ -82,7 +83,23 @@ class Panel:
                                 'set_coord_x', 'txt_set_coord_x', 'set_coord_y',
                                 'txt_set_coord_y', 'tb_plasma', 'tb_ox',
                                 ]
-    
+ 
+ 
+    def mode_change(self, stat):
+        STATUS.poll()
+        mode = STATUS.task_mode
+        self.b_g_o('label4').set_label("%s" % mode)
+        if mode == linuxcnc.MODE_MDI or mode == linuxcnc.MODE_AUTO:
+            for i in self.widgets_in_mode:
+                self.b_g_o(i).set_sensitive(False)
+        if mode == linuxcnc.MODE_MANUAL:
+            for i in self.widgets_in_mode:
+                self.b_g_o(i).set_sensitive(True)
+                
+    def all_homed(self, stat):
+        if stat == 'homed':
+            self.b_g_o('main_box').set_sensitive(True)
+   
     def m_d_i(self, w, mdi=None):
         self.command.mode(linuxcnc.MODE_MDI)
         self.command.mdi(mdi)
@@ -113,38 +130,21 @@ class Panel:
     def feed_direction_change(self, widget, value):
         if isinstance(widget, hal_glib.GPin):
             if widget.get() is True:
-                self.pin_feed_dir.value += self.defs['vars']['feed_directincr'] * value
+                self.pin_feed_dir.value += self.defs['feed_directincr'] * value
         if isinstance(widget, gi.overrides.Gtk.Button):
-            self.pin_feed_dir.value += self.defs['vars']['feed_directincr'] * value
-        if self.pin_feed_dir.value >= self.defs['vars']['feed_directmax']:
-            self.pin_feed_dir.value = self.defs['vars']['feed_directmax']
+            self.pin_feed_dir.value += self.defs['feed_directincr'] * value
+        if self.pin_feed_dir.value >= self.defs['feed_directmax']:
+            self.pin_feed_dir.value = self.defs['feed_directmax']
             self.btn_feed_dir_plus.set_sensitive(False)
             self.lbl_feed_dir.set_label('FWD')
-        elif self.pin_feed_dir.value <= self.defs['vars']['feed_directmin']:
-            self.pin_feed_dir.value = self.defs['vars']['feed_directmin']
+        elif self.pin_feed_dir.value <= self.defs['feed_directmin']:
+            self.pin_feed_dir.value = self.defs['feed_directmin']
             self.btn_feed_dir_minus.set_sensitive(False)
             self.lbl_feed_dir.set_label('BWD')
         else:
             self.btn_feed_dir_plus.set_sensitive(True)
             self.btn_feed_dir_minus.set_sensitive(True)
             self.lbl_feed_dir.set_label('STOP')
-        self.b_g_o('lbl_info1').set_label('%s' % self.pin_feed_dir.value)
-
-        
-    def mode_change(self, stat):
-        STATUS.poll()
-        mode = STATUS.task_mode
-        self.b_g_o('label4').set_label("%s" % mode)
-        if mode == linuxcnc.MODE_MDI or mode == linuxcnc.MODE_AUTO:
-            for i in self.widgets_in_mode:
-                self.b_g_o(i).set_sensitive(False)
-        if mode == linuxcnc.MODE_MANUAL:
-            for i in self.widgets_in_mode:
-                self.b_g_o(i).set_sensitive(True)
-                
-    def all_homed(self, stat):
-        if stat == 'homed':
-            self.b_g_o('main_box').set_sensitive(True)
             
 
 def get_handlers(halcomp, builder, useropts):
