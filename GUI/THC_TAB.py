@@ -36,6 +36,16 @@ class Panel:
         self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         
+        get_ini_info = getiniinfo.GetIniInfo()
+        prefs = preferences.preferences(get_ini_info.get_preference_file_path())
+        theme_name = prefs.getpref("gtk_theme", "Follow System Theme", str)
+        if theme_name == "Follow System Theme":
+            theme_name = Gtk.Settings.get_default().get_property("gtk-theme-name")
+        Gtk.Settings.get_default().set_string_property("gtk-theme-name", theme_name, "")
+        self.ini_filename = __name__ + ".var"
+        self.ini = IniFile(self.ini_filename, self.defaults, self.builder)
+        self.ini.restore_state(self)
+        
         GSTAT.connect('all-homed', lambda w: self.all_homed('homed'))
         GSTAT.connect('mode-auto', lambda w: self.mode_change('auto'))
         GSTAT.connect('mode-manual', lambda w: self.mode_change('manual'))
