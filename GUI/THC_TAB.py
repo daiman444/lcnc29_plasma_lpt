@@ -94,7 +94,6 @@ class Panel:
             # declaring push-button '_plus' and connection to method
             self.b_g_o(btn_plus).connect('pressed', self.widget_value_change, name, 1)
             if self.defs[val] == self.defs[max]:
-                self.b_g_o('info1').set_label('%s' % self.defs[val])
                 self.b_g_o(btn_plus).set_sensitive(False)
 
             # declaring push-button '_minus' and connection to method
@@ -198,6 +197,8 @@ class Panel:
 
 #TODO добить кнопки режима ручной резки
     def pb_changes(self, w, d=None):
+        self.b_g_o('info1').set_label('%s' % w)
+        self.b_g_o('info2').set_label('%s' % d)
         if w.get_active() == True and d == 'plasma':
             self.b_g_o('tb_ox').set_active(False)
             self.b_g_o('tb_ox').set_sensitive(False)
