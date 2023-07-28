@@ -70,6 +70,10 @@ class Panel:
 
         self.lbl_feed_dir = self.builder.get_object('lbl_feed_dir')
         self.lbl_feed_dir.set_label('FWD')
+        
+        # toggle buttons
+        self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
+        self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
 
         # declaring widgets as a list.
         # push-buttons list for change values:
@@ -79,6 +83,13 @@ class Panel:
                              'vsetup', 'freq_scale', 'arc_ok_min',
                              'arc_ok_max', 'periods', 'vtol', 
                              ]
+        
+        #list to set sensitive widgets on mode auto/mdi/manual
+        self.widgets_in_mode = ['gotozero', 'gotoend', 'zero-xyz',
+                                'zero-x', 'zero-y', 'zero-z',
+                                'set_coord_x', 'txt_set_coord_x', 'set_coord_y',
+                                'txt_set_coord_y', 'tb_plasma', 'tb_ox',
+                                ]
         
         # after widgets_list declaration star the widget initialisation cycle:
         for name in self.widgets_list:
@@ -104,18 +115,6 @@ class Panel:
             # declaring hal pin
             self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
 
-        
-        #list to set sensitive widgets on mode auto/mdi/manual
-        self.widgets_in_mode = ['gotozero', 'gotoend', 'zero-xyz',
-                                'zero-x', 'zero-y', 'zero-z',
-                                'set_coord_x', 'txt_set_coord_x', 'set_coord_y',
-                                'txt_set_coord_y', 'tb_plasma', 'tb_ox',
-                                ]
- 
-        # toggle buttons
-        self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
-        self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
-        
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
