@@ -197,7 +197,7 @@ class Panel:
 
 #TODO добить кнопки режима ручной резки
     def pb_changes(self, w, d=None):
-        self.b_g_o('info1').set_label('%s' % w)
+        self.b_g_o('info1').set_label('%s' % type(w))
         self.b_g_o('info2').set_label('%s' % d)
         if w.get_active() == True and d == 'plasma':
             self.b_g_o('tb_ox').set_active(False)
