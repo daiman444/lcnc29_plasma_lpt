@@ -118,7 +118,7 @@ class Panel:
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
-        self.b_g_o('label4').set_label("%s" % mode)
+        self.b_g_o('info1').set_label("%s" % mode)
         if mode == linuxcnc.MODE_MDI or mode == linuxcnc.MODE_AUTO:
             for i in self.widgets_in_mode:
                 self.b_g_o(i).set_sensitive(False)
