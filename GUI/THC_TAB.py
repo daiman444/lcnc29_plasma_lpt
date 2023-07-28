@@ -194,7 +194,6 @@ class Panel:
             self.b_g_o('lbl_' + name).set_label('%s' % round(self.defs[name + 'val'], 1))
             self.halcomp[name] = round(self.defs[name + 'val'], 1)
 
-#TODO добить кнопки режима ручной резки
     def pb_changes(self, w, d=None):
         self.b_g_o('info1').set_label('%s' % type(w))
         self.b_g_o('info2').set_label('%s' % d)
