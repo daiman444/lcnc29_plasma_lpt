@@ -35,6 +35,10 @@ class Panel:
         self.defaults = {IniFile.vars: defaults.defaults}   
         self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
+        # thc section
+        self.v_measured = self.hglib_pin(self.halcomp.newpin('volts_measures', hal.HAL_FLOAT, hal.HAL_IN))
+        self.info_upd('pass')
+        
         
         get_ini_info = getiniinfo.GetIniInfo()
         prefs = preferences.preferences(get_ini_info.get_preference_file_path())
@@ -50,6 +54,7 @@ class Panel:
         GSTAT.connect('mode-auto', lambda w: self.mode_change('auto'))
         GSTAT.connect('mode-manual', lambda w: self.mode_change('manual'))
         GSTAT.connect('mode-mdi', lambda w: self.mode_change('mdi'))
+        GSTAT.connect('periodic', lambda w: self.info_upd, 'pass')
         
         self.b_g_o('gotozero').connect('pressed', self.go_to_zero, 'G90 G0 Z30 X0 Y0 F800')
         self.b_g_o('zero-xyz').connect('pressed', self.m_d_i, 'G92 X0 Y0 Z0')
@@ -84,7 +89,9 @@ class Panel:
         # toggle buttons
         self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
         self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
-
+        
+        
+        
         # declaring widgets as a list.
         # push-buttons list for change values:
         self.widgets_list = ['cor_vel', 'vel_tol', 'pierce_hght',
@@ -124,6 +131,10 @@ class Panel:
             # declaring hal pin
             self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
 
+
+    def info_upd(self, state):
+        self.b_g_o('lbl_v_mesured').set_label('%s' % self.v_measured.value)
+        
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
