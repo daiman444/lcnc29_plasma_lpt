@@ -36,6 +36,16 @@ class Panel:
         self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         
+        get_ini_info = getiniinfo.GetIniInfo()
+        prefs = preferences.preferences(get_ini_info.get_preference_file_path())
+        theme_name = prefs.getpref("gtk_theme", "Follow System Theme", str)
+        if theme_name == "Follow System Theme":
+            theme_name = Gtk.Settings.get_default().get_property("gtk-theme-name")
+        Gtk.Settings.get_default().set_string_property("gtk-theme-name", theme_name, "")
+        self.ini_filename = __name__ + ".var"
+        self.ini = IniFile(self.ini_filename, self.defaults, self.builder)
+        self.ini.restore_state(self)
+        
         GSTAT.connect('all-homed', lambda w: self.all_homed('homed'))
         GSTAT.connect('mode-auto', lambda w: self.mode_change('auto'))
         GSTAT.connect('mode-manual', lambda w: self.mode_change('manual'))
@@ -70,6 +80,10 @@ class Panel:
 
         self.lbl_feed_dir = self.builder.get_object('lbl_feed_dir')
         self.lbl_feed_dir.set_label('FWD')
+        
+        # toggle buttons
+        self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
+        self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
 
         # declaring widgets as a list.
         # push-buttons list for change values:
@@ -79,6 +93,13 @@ class Panel:
                              'vsetup', 'freq_scale', 'arc_ok_min',
                              'arc_ok_max', 'periods', 'vtol', 
                              ]
+        
+        #list to set sensitive widgets on mode auto/mdi/manual
+        self.widgets_in_mode = ['gotozero', 'gotoend', 'zero-xyz',
+                                'zero-x', 'zero-y', 'zero-z',
+                                'set_coord_x', 'txt_set_coord_x', 'set_coord_y',
+                                'txt_set_coord_y', 'tb_plasma', 'tb_ox',
+                                ]
         
         # after widgets_list declaration star the widget initialisation cycle:
         for name in self.widgets_list:
@@ -94,7 +115,6 @@ class Panel:
             # declaring push-button '_plus' and connection to method
             self.b_g_o(btn_plus).connect('pressed', self.widget_value_change, name, 1)
             if self.defs[val] == self.defs[max]:
-                self.b_g_o('info1').set_label('%s' % self.defs[val])
                 self.b_g_o(btn_plus).set_sensitive(False)
 
             # declaring push-button '_minus' and connection to method
@@ -105,22 +125,10 @@ class Panel:
             # declaring hal pin
             self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
 
-        
-        #list to set sensitive widgets on mode auto/mdi/manual
-        self.widgets_in_mode = ['gotozero', 'gotoend', 'zero-xyz',
-                                'zero-x', 'zero-y', 'zero-z',
-                                'set_coord_x', 'txt_set_coord_x', 'set_coord_y',
-                                'txt_set_coord_y', 'tb_plasma', 'tb_ox',
-                                ]
- 
-        # toggle buttons
-        self.b_g_o('tb_plasma').connect('toggled', self.pb_changes, 'plasma')
-        self.b_g_o('tb_ox').connect('toggled', self.pb_changes, 'ox')
-        
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
-        self.b_g_o('label4').set_label("%s" % mode)
+        self.b_g_o('info1').set_label("%s" % mode)
         if mode == linuxcnc.MODE_MDI or mode == linuxcnc.MODE_AUTO:
             for i in self.widgets_in_mode:
                 self.b_g_o(i).set_sensitive(False)
@@ -196,8 +204,9 @@ class Panel:
             self.b_g_o('lbl_' + name).set_label('%s' % round(self.defs[name + 'val'], 1))
             self.halcomp[name] = round(self.defs[name + 'val'], 1)
 
-#TODO добить кнопки режима ручной резки
     def pb_changes(self, w, d=None):
+        self.b_g_o('info1').set_label('%s' % type(w))
+        self.b_g_o('info2').set_label('%s' % d)
         if w.get_active() == True and d == 'plasma':
             self.b_g_o('tb_ox').set_active(False)
             self.b_g_o('tb_ox').set_sensitive(False)

@@ -642,7 +642,7 @@
                     <property name="visible">True</property>
                     <property name="can-focus">False</property>
                     <child>
-                      <object class="GtkToggleButton">
+                      <object class="GtkToggleButton" id="tb_plasma">
                         <property name="label" translatable="yes">Plasma</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
@@ -656,7 +656,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkToggleButton">
+                      <object class="GtkToggleButton" id="tb_ox">
                         <property name="label" translatable="yes">Oxygen</property>
                         <property name="visible">True</property>
                         <property name="can-focus">True</property>
