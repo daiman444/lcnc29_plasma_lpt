@@ -90,8 +90,7 @@ class Panel:
         self.widgets_list = ['cor_vel', 'vel_tol', 'pierce_hght',
                              'pierce_del', 'jump_hght', 'cut_hght',
                              'stop_del', 'safe_z', 'z_speed',
-                             'vsetup', 'freq_scale', 'arc_ok_min',
-                             'arc_ok_max', 'periods', 'vtol', 
+                             'vsetup', 
                              ]
         
         #list to set sensitive widgets on mode auto/mdi/manual

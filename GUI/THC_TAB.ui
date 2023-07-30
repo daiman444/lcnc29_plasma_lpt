@@ -716,11 +716,11 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkLabel" id="lbl_search1">
+                          <object class="GtkLabel" id="lbl_v_mesured">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="halign">center</property>
-                            <property name="label" translatable="yes">search</property>
+                            <property name="label" translatable="yes">V(meas.)</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                               <attribute name="scale" value="2"/>
@@ -733,8 +733,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_setx_zero1">
-                            <property name="label" translatable="yes">X=0</property>
+                          <object class="GtkButton" id="btn_vsetup_minus">
+                            <property name="label" translatable="yes">-</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -746,8 +746,8 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton" id="btn_setx_zero7">
-                            <property name="label" translatable="yes">X=0</property>
+                          <object class="GtkButton" id="btn_vsetup_plus">
+                            <property name="label" translatable="yes">+</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -759,11 +759,11 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel" id="lbl_search2">
+                          <object class="GtkLabel" id="lbl_vsetup">
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
                             <property name="halign">center</property>
-                            <property name="label" translatable="yes">search</property>
+                            <property name="label" translatable="yes">V(setup)</property>
                             <attributes>
                               <attribute name="weight" value="bold"/>
                               <attribute name="scale" value="2"/>
@@ -923,6 +923,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="label" translatable="yes">THC</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
               </object>
             </child>
           </object>
