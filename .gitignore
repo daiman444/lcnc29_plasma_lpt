@@ -4,4 +4,4 @@
 *.var.BAD
 *.var.bak
 *.pref
-
+./GUI/__pycache__

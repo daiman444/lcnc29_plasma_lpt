@@ -7,12 +7,176 @@
     <property name="name">window1</property>
     <property name="can-focus">False</property>
     <child>
+<<<<<<< HEAD
       <object class="GtkTable" id="table1">
+=======
+      <object class="GtkBox" id="main_box">
+>>>>>>> ch32_v2
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="n-rows">7</property>
         <child>
+<<<<<<< HEAD
           <object class="GtkFrame" id="frame2">
+=======
+          <!-- n-columns=7 n-rows=2 -->
+          <object class="GtkGrid">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable="yes">Probe</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable="yes">Torch</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable="yes">Arc</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="label" translatable="yes">THC</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+              </object>
+              <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">0</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+              </object>
+              <packing>
+                <property name="left-attach">3</property>
+                <property name="top-attach">0</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkSeparator">
+                <property name="name">window1</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+              </object>
+              <packing>
+                <property name="left-attach">5</property>
+                <property name="top-attach">0</property>
+                <property name="height">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="led_probe-in">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="is-on">True</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">0</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="led_spindle-on">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">2</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="led_ark-ok">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">4</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="HAL_LED" id="led_thc_enable">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="led-blink-rate">0</property>
+              </object>
+              <packing>
+                <property name="left-attach">6</property>
+                <property name="top-attach">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkSeparator">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkFrame">
+>>>>>>> ch32_v2
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label-xalign">0</property>
@@ -55,6 +219,37 @@
                       <object class="GtkHSeparator" id="hseparator1">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
+<<<<<<< HEAD
+=======
+                        <child>
+                          <object class="GtkButton" id="gotozero">
+                            <property name="label" translatable="yes">Отправить в 0</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="gotoend">
+                            <property name="label" translatable="yes">Отправить в MAX</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+>>>>>>> ch32_v2
                       </object>
                       <packing>
                         <property name="top-attach">2</property>
@@ -90,8 +285,13 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="set_coord_x">
                             <property name="label" translatable="yes">X = </property>
+=======
+                          <object class="GtkButton" id="zero-xyz">
+                            <property name="label" translatable="yes">XYZ=0</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -107,8 +307,13 @@ G92 Xvalue
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkEntry" id="txt_set_coord_x">
                             <property name="width-request">60</property>
+=======
+                          <object class="GtkButton" id="zero-x">
+                            <property name="label" translatable="yes">X=0</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="tooltip-text" translatable="yes">Задает значение по X</property>
@@ -127,8 +332,13 @@ G92 Xvalue
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="set_coord_y">
                             <property name="label" translatable="yes">Y = </property>
+=======
+                          <object class="GtkButton" id="zero-y">
+                            <property name="label" translatable="yes">Y=0</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -144,8 +354,13 @@ G92 Yvalue
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkEntry" id="txt_set_coord_y">
                             <property name="width-request">60</property>
+=======
+                          <object class="GtkButton" id="zero-z">
+                            <property name="label" translatable="yes">Z=0</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="tooltip-text" translatable="yes">Задает значение по Y</property>
@@ -209,8 +424,13 @@ G92 Yvalue
                         <property name="can-focus">False</property>
                         <property name="layout-style">spread</property>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="gotozero">
                             <property name="label" translatable="yes">Отправить в 0</property>
+=======
+                          <object class="GtkButton" id="set_coord_x">
+                            <property name="label" translatable="yes">x=</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -224,6 +444,7 @@ G0 X0 Y0 Z30</property>
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="gotoend">
                             <property name="label" translatable="yes">Отправить в конец</property>
                             <property name="visible">True</property>
@@ -233,6 +454,36 @@ G0 X0 Y0 Z30</property>
 выполнению MDI команд:
 G53 Z0
 G53 Xmax Ymax</property>
+=======
+                          <object class="GtkEntry" id="txt_set_coord_x">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="set_coord_y">
+                            <property name="label" translatable="yes">y=</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="txt_set_coord_y">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+>>>>>>> ch32_v2
                           </object>
                           <packing>
                             <property name="expand">False</property>
@@ -251,8 +502,13 @@ G53 Xmax Ymax</property>
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="zero-xyz">
                             <property name="label" translatable="yes">XYZ=0</property>
+=======
+                          <object class="GtkButton" id="btn_feed_minus">
+                            <property name="label" translatable="yes">&lt;&lt;BWD</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -268,8 +524,12 @@ G92 X0 Y0 Z0
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="zero-x">
                             <property name="label" translatable="yes">X=0</property>
+=======
+                          <object class="GtkLabel" id="lbl_feed_dir">
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -285,8 +545,13 @@ G92 X0
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="zero-y">
                             <property name="label" translatable="yes">Y=0</property>
+=======
+                          <object class="GtkButton" id="btn_feed_plus">
+                            <property name="label" translatable="yes">FWD&gt;&gt;</property>
+>>>>>>> ch32_v2
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
@@ -496,6 +761,7 @@ G92 Z0
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
+<<<<<<< HEAD
                           <placeholder/>
                         </child>
                         <child>
@@ -503,6 +769,45 @@ G92 Z0
                         </child>
                         <child>
                           <placeholder/>
+=======
+                          <object class="GtkButton" id="btn_z_speed_minus">
+                            <property name="label" translatable="yes">-</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_z_speed_plus">
+                            <property name="label" translatable="yes">+</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">3</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_safe_z_plus">
+                            <property name="label" translatable="yes">+</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">3</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+>>>>>>> ch32_v2
                         </child>
                       </object>
                       <packing>
@@ -516,11 +821,44 @@ G92 Z0
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="btn_feed_minus">
                             <property name="label" translatable="yes">&lt;&lt;Назад</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
+=======
+                          <object class="GtkButton" id="btn_safe_z_minus">
+                            <property name="label" translatable="yes">-</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Поиск(мм*сек):</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lbl_z_speed">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="label" translatable="yes">val</property>
+>>>>>>> ch32_v2
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -542,11 +880,19 @@ G92 Z0
                           </packing>
                         </child>
                         <child>
+<<<<<<< HEAD
                           <object class="GtkButton" id="btn_feed_plus">
                             <property name="label" translatable="yes">Вперед&gt;&gt;</property>
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
                             <property name="receives-default">True</property>
+=======
+                          <object class="GtkLabel" id="lbl_safe_z">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="hexpand">True</property>
+                            <property name="label" translatable="yes">val</property>
+>>>>>>> ch32_v2
                           </object>
                           <packing>
                             <property name="expand">True</property>
@@ -584,7 +930,50 @@ G92 Z0
           </packing>
         </child>
         <child>
+<<<<<<< HEAD
           <object class="GtkFrame" id="frame3">
+=======
+          <object class="GtkLabel" id="info1">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">direction</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">6</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="info2">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">direction</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">7</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkLabel" id="info3">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="hexpand">True</property>
+            <property name="label" translatable="yes">direction</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">8</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkFrame">
+>>>>>>> ch32_v2
             <property name="visible">True</property>
             <property name="can-focus">False</property>
             <property name="label-xalign">0</property>
@@ -592,6 +981,7 @@ G92 Z0
               <object class="GtkAlignment" id="alignment3">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+                <property name="double-buffered">False</property>
                 <property name="left-padding">12</property>
                 <child>
                   <object class="GtkTable" id="table8">
@@ -632,9 +1022,15 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD
             <property name="top-attach">3</property>
             <property name="bottom-attach">4</property>
             <property name="y-options"/>
+=======
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">9</property>
+>>>>>>> ch32_v2
           </packing>
         </child>
         <child>
@@ -647,7 +1043,222 @@ G92 Z0
                 <property name="height-request">20</property>
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+<<<<<<< HEAD
                 <property name="label" translatable="yes">label</property>
+=======
+                <property name="left-padding">12</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <!-- n-columns=2 n-rows=2 -->
+                      <object class="GtkGrid">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkLabel" id="lbl_v_mesured">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="label" translatable="yes">V(meas.)</property>
+                            <attributes>
+                              <attribute name="weight" value="bold"/>
+                              <attribute name="scale" value="2"/>
+                              <attribute name="foreground" value="#e6e661610000"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_vsetup_minus">
+                            <property name="label" translatable="yes">-</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_vsetup_plus">
+                            <property name="label" translatable="yes">+</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lbl_vsetup">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="label" translatable="yes">V(setup)</property>
+                            <attributes>
+                              <attribute name="weight" value="bold"/>
+                              <attribute name="scale" value="2"/>
+                              <attribute name="foreground" value="#1717f0f01818"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <!-- n-columns=4 n-rows=3 -->
+                      <object class="GtkGrid">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="hexpand">True</property>
+                            <property name="label" translatable="yes">Cor. vel:</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Vel. tol::</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
+                            <property name="top-attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lbl_cor_vel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="hexpand">True</property>
+                            <property name="label" translatable="yes">val</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel" id="lbl_vel_tol">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="label" translatable="yes">val</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">1</property>
+                            <property name="top-attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_cor_vel_minus">
+                            <property name="label" translatable="yes">-</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_cor_vel_plus">
+                            <property name="label" translatable="yes">+</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">3</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_vel_tol_minus">
+                            <property name="label" translatable="yes">-</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="btn_vel_tol_plus">
+                            <property name="label" translatable="yes">+</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="hexpand">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">3</property>
+                            <property name="top-attach">2</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                        <child>
+                          <placeholder/>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="expand">False</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+                </child>
+>>>>>>> ch32_v2
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -672,9 +1283,16 @@ G92 Z0
               <object class="GtkLabel" id="lbl_print2">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+<<<<<<< HEAD
                 <property name="label" translatable="yes">label</property>
                 <property name="justify">fill</property>
                 <property name="max-width-chars">50</property>
+=======
+                <property name="label" translatable="yes">THC</property>
+                <attributes>
+                  <attribute name="weight" value="bold"/>
+                </attributes>
+>>>>>>> ch32_v2
               </object>
               <packing>
                 <property name="expand">True</property>
@@ -684,9 +1302,15 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD
             <property name="top-attach">4</property>
             <property name="bottom-attach">5</property>
             <property name="y-options"/>
+=======
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">11</property>
+>>>>>>> ch32_v2
           </packing>
         </child>
         <child>
@@ -741,6 +1365,7 @@ G92 Z0
                   </packing>
                 </child>
                 <child>
+<<<<<<< HEAD
                   <object class="GtkLabel" id="label15">
                     <property name="width-request">40</property>
                     <property name="visible">True</property>
@@ -752,6 +1377,321 @@ G92 Z0
                     <property name="fill">False</property>
                     <property name="position">3</property>
                   </packing>
+=======
+                  <!-- n-columns=4 n-rows=10 -->
+                  <object class="GtkGrid">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="hexpand">True</property>
+                        <property name="label" translatable="yes">Прожиг:</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Прыжок:</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Резка:</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_pierce_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="hexpand">True</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_jump_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_cut_hght">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="top-attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_jump_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="top-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cut_hght_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="top-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="top-attach">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_jump_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="top-attach">4</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_cut_hght_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="top-attach">6</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Продувка:</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_stop_del">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_stop_del_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="top-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_stop_del_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="top-attach">8</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="label" translatable="yes">Задержка:</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">0</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="lbl_pierce_del">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">center</property>
+                        <property name="label" translatable="yes">val</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">1</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_del_minus">
+                        <property name="label" translatable="yes">-</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">2</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="btn_pierce_del_plus">
+                        <property name="label" translatable="yes">+</property>
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="receives-default">True</property>
+                        <property name="hexpand">True</property>
+                      </object>
+                      <packing>
+                        <property name="left-attach">3</property>
+                        <property name="top-attach">2</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                    <child>
+                      <placeholder/>
+                    </child>
+                  </object>
+>>>>>>> ch32_v2
                 </child>
               </object>
               <packing>
@@ -763,6 +1703,7 @@ G92 Z0
               <object class="GtkHButtonBox" id="hbuttonbox5">
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
+<<<<<<< HEAD
                 <property name="spacing">5</property>
                 <child>
                   <object class="HAL_LED" id="led_probe-in">
@@ -818,6 +1759,9 @@ G92 Z0
                     <property name="position">3</property>
                   </packing>
                 </child>
+=======
+                <property name="label" translatable="yes">Pierce:</property>
+>>>>>>> ch32_v2
               </object>
               <packing>
                 <property name="right-attach">7</property>
@@ -828,6 +1772,7 @@ G92 Z0
             </child>
           </object>
           <packing>
+<<<<<<< HEAD
             <property name="y-options"/>
           </packing>
         </child>
@@ -842,6 +1787,11 @@ G92 Z0
             <property name="top-attach">6</property>
             <property name="bottom-attach">7</property>
             <property name="y-options"/>
+=======
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">13</property>
+>>>>>>> ch32_v2
           </packing>
         </child>
         <child>

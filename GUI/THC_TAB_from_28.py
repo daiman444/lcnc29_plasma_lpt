@@ -282,21 +282,21 @@ class PlasmaClass:
             self.halcomp[name] = round(self.defs[name + 'val'], 1)
 
     def pb_changes(self, w, d=None):
-        if w.get_active() == True and d == 'plasma':
+        if w.get_active() and d == 'plasma':
             self.b_g_o('tb_ox').set_active(False)
             self.b_g_o('tb_ox').set_sensitive(False)
             mcode = 'M64'
             p = 'P1'
-        if w.get_active() == False and d == 'plasma':
+        if not w.get_active() and d == 'plasma':
             self.b_g_o('tb_ox').set_sensitive(True)
             mcode = 'M65'
             p = 'P1'
-        if w.get_active() == True and d == 'ox':
+        if w.get_active() and d == 'ox':
             self.b_g_o('tb_plasma').set_active(False)
             self.b_g_o('tb_plasma').set_sensitive(False)
             mcode = 'M64'
             p = 'P2'
-        if w.get_active() == False and d == 'ox':
+        if not w.get_active() and d == 'ox':
             self.b_g_o('tb_plasma').set_sensitive(True)
             mcode = 'M65'
             p = 'P2'
