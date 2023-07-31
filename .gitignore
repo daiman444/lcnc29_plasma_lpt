@@ -4,8 +4,9 @@
 *.var.BAD
 *.var.bak
 *.pref
-./GUI/__pycache__^
 *.halscope
 *.preferences
 *.halshow
+./GUI/__pycache__^
+
 
