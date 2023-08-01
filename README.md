@@ -1,6 +1,8 @@
 # Plasma_LPT
 Plasma config for LinuxCNC
 
+deb12
+
 # HotKeys.
 
 "r" - run program;\
