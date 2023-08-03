@@ -27,6 +27,7 @@ class Panel:
     def __init__(self, halcomp, builder, useropts):
         self.lcnc = linuxcnc
         self.command = linuxcnc.command()
+        self.hglib = hal_glib
         self.hglib_pin = hal_glib.GPin
         self.halcomp = halcomp
         self.builder = builder
@@ -36,9 +37,10 @@ class Panel:
         self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         # thc section
-        self.v_measured = self.hglib_pin(self.halcomp.newpin('volts_measures', hal.HAL_FLOAT, hal.HAL_IN))
+        self.v_measured_pin = self.halcomp.newpin('volts_measured', hal.HAL_FLOAT, hal.HAL_IN)
+        self.v_measured = self.halcomp['volts_measured']
+        #self.b_g_o('lbl_v_mesured').set_label('%s' % self.halcomp['volts_measured'])
         self.info_upd()
-        
         
         get_ini_info = getiniinfo.GetIniInfo()
         prefs = preferences.preferences(get_ini_info.get_preference_file_path())
@@ -132,9 +134,10 @@ class Panel:
             self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
 
 
-    def info_upd(self):
-        self.b_g_o('lbl_v_mesured').set_label('%s' % self.v_measured.value)
-        
+    def info_upd(self, **args):
+        self.b_g_o('lbl_v_mesured').set_label('%s' % self.halcomp['volts_measured'])
+        pass
+    
     def mode_change(self, stat):
         STATUS.poll()
         mode = STATUS.task_mode
