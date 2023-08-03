@@ -695,23 +695,6 @@
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
                         <child>
-                          <object class="GtkLabel" id="lbl_v_mesured">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="halign">center</property>
-                            <property name="label" translatable="yes">V(meas.)</property>
-                            <attributes>
-                              <attribute name="weight" value="bold"/>
-                              <attribute name="scale" value="2"/>
-                              <attribute name="foreground" value="#e6e661610000"/>
-                            </attributes>
-                          </object>
-                          <packing>
-                            <property name="left-attach">0</property>
-                            <property name="top-attach">0</property>
-                          </packing>
-                        </child>
-                        <child>
                           <object class="GtkButton" id="btn_vsetup_minus">
                             <property name="label" translatable="yes">-</property>
                             <property name="visible">True</property>
@@ -751,6 +734,23 @@
                           </object>
                           <packing>
                             <property name="left-attach">1</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="HAL_Label" id="v_measured">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">V(meas)</property>
+                            <property name="label-pin-type">1</property>
+                            <attributes>
+                              <attribute name="weight" value="bold"/>
+                              <attribute name="scale" value="2"/>
+                              <attribute name="foreground" value="#ffff78780000"/>
+                            </attributes>
+                          </object>
+                          <packing>
+                            <property name="left-attach">0</property>
                             <property name="top-attach">0</property>
                           </packing>
                         </child>

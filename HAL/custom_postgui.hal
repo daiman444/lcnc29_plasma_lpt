@@ -38,4 +38,4 @@ net oxtorch-on          => ahc.oxtorch-on               => motion.digital-in-09
 #net feed-minus          <= hotkeys.feed_minus           => thctab.feed-dir-minus
 #net adaptive_feed       => motion.adaptive-feed         <= thctab.feed-dir
 
-net tudasuda            thctab.vsetup                   thctab.volts_measured
+net tudasuda            thctab.vsetup                   thctab.v_measured
