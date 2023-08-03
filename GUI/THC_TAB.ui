@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.38.2 -->
+<!-- Generated with glade 3.40.0 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
   <requires lib="gladevcp" version="0.0"/>
@@ -588,43 +588,13 @@
           </packing>
         </child>
         <child>
-          <object class="GtkLabel" id="info1">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="hexpand">True</property>
-            <property name="label" translatable="yes">direction</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">6</property>
-          </packing>
+          <placeholder/>
         </child>
         <child>
-          <object class="GtkLabel" id="info2">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="hexpand">True</property>
-            <property name="label" translatable="yes">direction</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">7</property>
-          </packing>
+          <placeholder/>
         </child>
         <child>
-          <object class="GtkLabel" id="info3">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="hexpand">True</property>
-            <property name="label" translatable="yes">direction</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">8</property>
-          </packing>
+          <placeholder/>
         </child>
         <child>
           <object class="GtkFrame">

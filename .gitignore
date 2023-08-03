@@ -8,5 +8,5 @@
 *.preferences
 *.halshow
 ./GUI/__pycache__^
-
+*~
 
