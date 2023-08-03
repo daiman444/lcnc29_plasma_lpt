@@ -37,7 +37,7 @@ class Panel:
         self.b_g_o('main_box').set_sensitive(False)
         # thc section
         self.v_measured = self.hglib_pin(self.halcomp.newpin('volts_measures', hal.HAL_FLOAT, hal.HAL_IN))
-        self.info_upd('pass')
+        self.info_upd()
         
         
         get_ini_info = getiniinfo.GetIniInfo()
@@ -54,7 +54,7 @@ class Panel:
         GSTAT.connect('mode-auto', lambda w: self.mode_change('auto'))
         GSTAT.connect('mode-manual', lambda w: self.mode_change('manual'))
         GSTAT.connect('mode-mdi', lambda w: self.mode_change('mdi'))
-        GSTAT.connect('periodic', lambda w: self.info_upd, 'pass')
+        GSTAT.connect('periodic', self.info_upd)
         
         self.b_g_o('gotozero').connect('pressed', self.go_to_zero, 'G90 G0 Z30 X0 Y0 F800')
         self.b_g_o('zero-xyz').connect('pressed', self.m_d_i, 'G92 X0 Y0 Z0')
@@ -132,7 +132,7 @@ class Panel:
             self.hglib_pin(self.halcomp.newpin(name, hal.HAL_FLOAT, hal.HAL_OUT)).value = self.defs[name + 'val']
 
 
-    def info_upd(self, state):
+    def info_upd(self):
         self.b_g_o('lbl_v_mesured').set_label('%s' % self.v_measured.value)
         
     def mode_change(self, stat):
@@ -215,23 +215,21 @@ class Panel:
             self.halcomp[name] = round(self.defs[name + 'val'], 1)
 
     def pb_changes(self, w, d=None):
-        self.b_g_o('info1').set_label('%s' % type(w))
-        self.b_g_o('info2').set_label('%s' % d)
-        if w.get_active() == True and d == 'plasma':
+        if w.get_active() and d == 'plasma':
             self.b_g_o('tb_ox').set_active(False)
             self.b_g_o('tb_ox').set_sensitive(False)
             mcode = 'M64'
             p = 'P1'
-        if w.get_active() == False and d == 'plasma':
+        if not w.get_active() and d == 'plasma':
             self.b_g_o('tb_ox').set_sensitive(True)
             mcode = 'M65'
             p = 'P1'
-        if w.get_active() == True and d == 'ox':
+        if w.get_active() and d == 'ox':
             self.b_g_o('tb_plasma').set_active(False)
             self.b_g_o('tb_plasma').set_sensitive(False)
             mcode = 'M64'
             p = 'P2'
-        if w.get_active() == False and d == 'ox':
+        if not w.get_active() and d == 'ox':
             self.b_g_o('tb_plasma').set_sensitive(True)
             mcode = 'M65'
             p = 'P2'
