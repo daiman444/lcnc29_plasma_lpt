@@ -7,6 +7,6 @@
 *.halscope
 *.preferences
 *.halshow
-./GUI/__pycache__^
+./GUI/__pycache__
 *~
 
