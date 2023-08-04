@@ -26,7 +26,7 @@ Before:
 ![Axis.png](GUI%2FAxis.png)
 
 After:
-![PlasmaCut.png](GUI%2FPlasmaCut.png)
+![2.9.png](GUI%2F2.9.png)
 
 
 
