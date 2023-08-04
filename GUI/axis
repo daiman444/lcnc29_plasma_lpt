@@ -2037,7 +2037,7 @@ class TclCommands(nf.TclCommands):
                 props['name'] = name
 
             size = os.stat(loaded_file).st_size
-            lines = int(widgets.text.index("end").split(".")[0])-2
+            lines = int(widgets.text.index("end").split(".")[0])-3
             props['size'] = _("%(size)s bytes\n%(lines)s G-code lines") % {'size': size, 'lines': lines}
 
             if vars.metric.get():
