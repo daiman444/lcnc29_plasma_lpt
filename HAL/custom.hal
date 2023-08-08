@@ -13,7 +13,7 @@ addf thc2 servo-thread
 # debounce probe
 net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
 net probe-out               debounce.0.0.out                motion.probe-input
-setp                        debounce.0.delay 5
+setp                        debounce.0.delay 15
 
 #пины режима резки
 net plasma                  ahc.plasma                      motion.digital-out-01
