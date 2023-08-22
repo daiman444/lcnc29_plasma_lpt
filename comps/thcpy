@@ -1,0 +1,56 @@
+#!/usr/bin/env python3
+
+'''
+python component to control the flame cutting source via Modbus.
+the component is designed to work with mb2hal.
+the component is designed to replace the cumbersome plasmac component
+
+inputs:
+volt_in_meas    - измеренное напряжение с источника плазмы
+volt_in_coef    - коэффициент для значения напряжения
+volt_in_set     - заданное напряжение(из интерфейса)
+arc_ok          - сигнал с датчика Холла о наличии режущего напряжения
+
+outputs:
+volt_out_meas   - измеренное напряжение с источника плазмы помноженное на коэффициент
+                  для вывода в графическом интерфейсе
+out_plasma_on   - сигнал включения плазмы
+out_oscyll_off  - сигнал выключения осциллятора
+'''
+
+import hal
+
+comp = hal.component('thcpy')
+bit_input = [
+    'arc_ok', 
+]
+float_input = [
+    'volt_in_meas', 'volt_in_coef', 'volt_in_set',            
+]
+bit_output = [
+    'out_plasma_on', 'out_oscyll_off'
+]
+float_output = [
+    'volt_out_meas', 
+]
+
+for i in bit_input:
+    comp.newpin(i, hal.HAL_BIT, hal.HAL_IN)
+    
+for i in float_input:
+    comp.newpin(i, hal.HAL_FLOAT, hal.HAL_IN)
+
+for i in bit_output:
+    comp.newpin(i, hal.HAL_BIT, hal.HAL_OUT)
+    
+for i in float_output:
+    comp.newpin(i, hal.HAL_FLOAT, hal.HAL_OUT)
+    
+comp.ready()
+
+while 1:
+    try:
+        i = 1
+    except Exception as e:
+        print(e)
+        
