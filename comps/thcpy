@@ -20,37 +20,44 @@ out_oscyll_off  - сигнал выключения осциллятора
 
 import hal
 
-comp = hal.component('thcpy')
-bit_input = [
-    'arc_ok', 
-]
-float_input = [
-    'volt_in_meas', 'volt_in_coef', 'volt_in_set',            
-]
-bit_output = [
-    'out_plasma_on', 'out_oscyll_off'
-]
-float_output = [
-    'volt_out_meas', 
-]
-
-for i in bit_input:
-    comp.newpin(i, hal.HAL_BIT, hal.HAL_IN)
-    
-for i in float_input:
-    comp.newpin(i, hal.HAL_FLOAT, hal.HAL_IN)
-
-for i in bit_output:
-    comp.newpin(i, hal.HAL_BIT, hal.HAL_OUT)
-    
-for i in float_output:
-    comp.newpin(i, hal.HAL_FLOAT, hal.HAL_OUT)
-    
-comp.ready()
-
-while 1:
-    try:
-        i = 1
-    except Exception as e:
-        print(e)
+class Comp:
+    def __init__(self, name):
+        self.comp = hal.component(name)
+        self.bit_input = ['probe_in', 'thc_enable', 'plasma_start', 'plasma_stop' ]
+        self.float_input = ['volt_in_meas', 'volt_in_coef', 'volt_in_set', 'arc_ok']
+        self.bit_output = ['out_plasma_on', 'out_oscyll_off']
+        self.float_output = ['volt_out_meas']
         
+        self.setup_pins()
+
+    def setup_pins(self):
+        self.setup_input_pins()
+        self.setup_output_pins()
+
+    def setup_input_pins(self):
+        for pin_name in self.bit_input:
+            self.comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_IN)
+        
+        for pin_name in self.float_input:
+            self.comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_IN)
+
+    def setup_output_pins(self):
+        for pin_name in self.bit_output:
+            self.comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_OUT)
+        
+        for pin_name in self.float_output:
+            self.comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_OUT)
+    
+    def ready(self):
+        self.comp.ready()
+
+if __name__ == "__main__":
+    thcpy = Comp('thcpy')
+    thcpy.ready()
+
+    while True:
+        try:
+            thcpy.comp['volt_out_meas'] = thcpy.comp['volt_in_meas'] * thcpy.comp['volt_in_coef']
+        except Exception as e:
+            print(f"An exception occurred: {e}")
+  
