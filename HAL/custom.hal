@@ -10,7 +10,7 @@ addf debounce.1 servo-thread
 addf ahc servo-thread
 addf thc2 servo-thread
 
-loadusr -W /home/ddd/linuxcnc/configs/lcnc29_plasma_lpt/comps/thcpy
+#loadusr -W /home/ddd/linuxcnc/configs/lcnc29_plasma_lpt/comps/thcpy
 
 # debounce probe
 net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
