@@ -10,31 +10,11 @@ addf debounce.1 servo-thread
 addf ahc servo-thread
 addf thc2 servo-thread
 
-#loadusr -W /home/ddd/linuxcnc/configs/lcnc29_plasma_lpt/comps/thcpy
-
 # debounce probe
 net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
 net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
 
-#пины режима резки
-net plasma                  ahc.plasma                      motion.digital-out-01
-net oxygen                  ahc.oxygen                      motion.digital-out-02
-#net thcu                    ahc.torch-up
-#net thcd                    ahc.torch-down
-#net arcok			        ahc.arc-ok						motion.digital-in-00
-net current-vel             ahc.current-vel                 motion.current-vel
-net requested-vel           ahc.requested-vel               motion.requested-vel
-net spindle-enable          ahc.torch-on
-net thc-enable              ahc.enable                      motion.digital-out-00
-net cur-offset              ahc.cur-offset
-net vel-status              ahc.vel-status
-net removing-offset         ahc.removing-offset
-net vel-tol                 ahc.velocity-tol
-net cor-vel                 ahc.correction-vel
-
-net spindle-enable          spindle.0.on                    parport.0.pin-17-out    ahc.oxtorch-on
-#net deb-arc-ok-out          motion.digital-in-00
 
 unlinkp                     joint.3.motor-pos-cmd
 net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
