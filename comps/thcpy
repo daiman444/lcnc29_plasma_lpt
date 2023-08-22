@@ -50,6 +50,8 @@ class Comp:
     
     def ready(self):
         self.comp.ready()
+        
+    
 
 if __name__ == "__main__":
     thcpy = Comp('thcpy')
