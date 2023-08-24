@@ -1,4 +1,5 @@
 loadrt debounce cfg=1,1,2
+loadusr thcpy
 
 addf debounce.0 servo-thread
 
@@ -6,6 +7,7 @@ addf debounce.0 servo-thread
 net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
 net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
+
 
 #unlinkp                     joint.3.motor-pos-cmd
 #net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
