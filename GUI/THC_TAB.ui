@@ -729,7 +729,7 @@
                             <attributes>
                               <attribute name="weight" value="bold"/>
                               <attribute name="scale" value="2"/>
-                              <attribute name="foreground" value="#1717f0f01818"/>
+                              <attribute name="foreground" value="#1a1a5f5fb4b4"/>
                             </attributes>
                           </object>
                           <packing>
