@@ -1,7 +1,5 @@
 loadrt debounce cfg=1,1,2
-loadrt plasmac
 
-addf plasmac servo-thread
 addf debounce.0 servo-thread
 
 # debounce probe
