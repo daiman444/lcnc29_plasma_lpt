@@ -1,14 +1,8 @@
-# Include your custom HAL commands here
-# This file will not be overwritten when you run PNCconf again
-
 loadrt debounce cfg=1,1,2
-loadrt ahc
-loadrt thc2
+loadrt plasmac
 
+addf plasmac servo-thread
 addf debounce.0 servo-thread
-addf debounce.1 servo-thread
-addf ahc servo-thread
-addf thc2 servo-thread
 
 # debounce probe
 net probe-in                debounce.0.0.in                 parport.0.pin-15-in-not
@@ -16,11 +10,12 @@ net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
 
 
-unlinkp                     joint.3.motor-pos-cmd
-net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
 
-unlinkp                     stepgen.3.position-cmd
-net z-pos-out               ahc.z-pos-out                   stepgen.3.position-cmd
+#unlinkp                     joint.3.motor-pos-cmd
+#net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
 
-unlinkp                     stepgen.3.position-fb
-net zpos-fb                 ahc.z-fb-out                    joint.3.motor-pos-fb
+#unlinkp                     stepgen.3.position-cmd
+#net z-pos-out               ahc.z-pos-out                   stepgen.3.position-cmd
+
+#unlinkp                     stepgen.3.position-fb
+#net zpos-fb                 ahc.z-fb-out                    joint.3.motor-pos-fb
