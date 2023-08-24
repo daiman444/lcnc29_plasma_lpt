@@ -8,7 +8,7 @@ net probe-in                debounce.0.0.in                 parport.0.pin-15-in-
 net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
 
-
+#net startprobe              probepy.start_probe             motion.digital-out-00
 #unlinkp                     joint.3.motor-pos-cmd
 #net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
 
