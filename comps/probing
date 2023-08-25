@@ -6,12 +6,10 @@ sudo cp ./comps/probing /usr/bin/
 
 import hal
 import linuxcnc
-import time
-
-
 
 comp = hal.component('probing')
 command = linuxcnc.command()
+stat = linuxcnc.stat()
 
 bit_input = ['start', ]
 float_input = []
@@ -43,9 +41,11 @@ def probe():
     command.mdi('G04 P3')
     command.mdi('M65P0')
 
+
 try:
-    while True:        
-        if comp.start:
+    while True:  
+        stat.poll()      
+        if stat.dout[0] == True:
             probe()
         else:
             pass
