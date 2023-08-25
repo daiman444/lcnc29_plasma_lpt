@@ -1,5 +1,5 @@
 loadrt debounce cfg=1,1,2
-loadusr probing
+loadusr -W probing
 
 addf debounce.0 servo-thread
 

@@ -2,59 +2,55 @@
 
 '''
 sudo cp ./comps/probing /usr/bin/
-
-
 '''
 
 import hal
 import linuxcnc
+import time
 
-class Comp:
-    def __init__(self, name):
-        self.comp = hal.component(name)
-        self.command = linuxcnc.command()
-        self.bit_input = ['start', ]
-        self.float_input = []
-        self.bit_output = []
-        self.float_output = []
-        
-        self.setup_pins()
 
-    def setup_pins(self):
-        for pin_name in self.bit_input:
-            self.comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_IN)
-        
-        for pin_name in self.float_input:
-            self.comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_IN)
 
-        for pin_name in self.bit_output:
-            self.comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_OUT)
-        
-        for pin_name in self.float_output:
-            self.comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_OUT)
+comp = hal.component('probing')
+command = linuxcnc.command()
+
+bit_input = ['start', ]
+float_input = []
+bit_output = []
+float_output = []
+
+for pin_name in bit_input:
+    comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_IN)
+
+for pin_name in float_input:
+    comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_IN)
+
+for pin_name in bit_output:
+    comp.newpin(pin_name, hal.HAL_BIT, hal.HAL_OUT)
+
+for pin_name in float_output:
+    comp.newpin(pin_name, hal.HAL_FLOAT, hal.HAL_OUT)
     
-    def ready(self):
-        self.comp.ready()
-        
-    def operation(self):
-        while self.comp['start']:
-            self.command.mode(linuxcnc.MODE_MDI)
-            self.command.wait_complete()
-            self.command.mdi('M65P0')
-            
-            
-        
-    
-if __name__ == "__main__":
-    probing = Comp('probing')
-    probing.ready()
-    probing.operation()
-    
+comp.ready()
+
+def probe():
+    command.mdi('G91')
+    command.mdi('G38.3 Z-50 F750')
+    command.mdi('G0 Z5')
+    command.mdi('M03 S100')
+    command.mdi('M66 P0 L3 Q5')
+    command.mdi('G0 Z3')
+    command.mdi('G90')
+    command.mdi('G04 P3')
+    command.mdi('M65P0')
+
+try:
+    while True:        
+        if comp.start:
+            probe()
+        else:
+            pass
+except KeyboardInterrupt:
+    raise SystemExit
     
 
-    while 1:
-        try:
-            probing.operation()
-        except Exception as e:
-            print(f"An exception occurred: {e}")
   
