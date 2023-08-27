@@ -1,5 +1,4 @@
 loadrt debounce cfg=1,1,2
-loadusr -W probing
 
 addf debounce.0 servo-thread
 
@@ -8,7 +7,8 @@ net probe-in                debounce.0.0.in                 parport.0.pin-15-in-
 net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
 
-net startprobe              probing.start             motion.digital-out-00
+#net zpos-cmd joint.3.motor-pos-cmd => stepgen.3.position-cmd
+#net zpos-fb stepgen.3.position-fb => joint.3.motor-pos-fb
 #unlinkp                     joint.3.motor-pos-cmd
 #net zpos-cmd                joint.3.motor-pos-cmd           ahc.z-pos-in
 
