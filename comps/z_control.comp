@@ -18,7 +18,6 @@ pin in bit 		down "Down pin";
 pin in float 	velocity "Velocity";
 pin in float 	scale "Scale for velocity";
 pin in float	z_pos_cmd_in "Z pos in from joint.*.motor-pos-cmd";
-pin in float	z_pos_fb_in "Z pos fb from stepgen.*.position-fb";
 
 // Output Pins
 pin out float 	z_pos_cmd_out "To stepgen.*.position-cmd";
@@ -39,9 +38,13 @@ FUNCTION(_) {
 	if(up){
 		offset += cor_vel;
 	}
-	if(down){
+	else if(down){
 		offset -= cor_vel;
 	}
+	else{
+		offset = 0;
+	}
+
 	z_pos_cmd_out = z_pos_cmd_in + offset;
-	z_pos_fb_out = z_pos_cmd_in;
+	z_pos_fb_out = z_pos_cmd_in + offset;
 	}	
