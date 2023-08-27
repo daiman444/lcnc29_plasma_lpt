@@ -10,16 +10,20 @@ net probe-out               debounce.0.0.out                motion.probe-input
 setp                        debounce.0.delay 15
 
 ## z_control
+setp z-control.max-z        [JOINT_3]MAX_LIMIT
+setp z-control.min-z        [JOINT_3]MIN_LIMIT
+
 net z-pos-cmd-in            z-control.z-pos-cmd-in          joint.3.motor-pos-cmd
 net z-pos-cmd-out           z-control.z-pos-cmd-out         stepgen.3.position-cmd
-#net z-pos-fb-in             z-control.z-pos-fb-in           stepgen.3.position-fb
-net z-pos-fb-out            z-control.z-pos-fb-out          joint.3.motor-pos-fb
+net z-pos-fb                stepgen.3.position-fb           joint.3.motor-pos-fb
+#net z-pos-fb-in             z-control.z-pos-fb-in           stepgen.3.position-fb 
+#net z-pos-fb-out            z-control.z-pos-fb-out          joint.3.motor-pos-fb
 
 net up                      z-control.up
 net down                    z-control.down
 
-setp z-control.velocity     0.01
-setp z-control.scale        1
+setp z-control.velocity     40
+setp z-control.scale        0.0001
 
 #net zpos-cmd joint.3.motor-pos-cmd => stepgen.3.position-cmd
 #net zpos-fb stepgen.3.position-fb => joint.3.motor-pos-fb
