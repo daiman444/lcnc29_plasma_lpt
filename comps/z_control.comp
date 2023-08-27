@@ -21,8 +21,8 @@ pin in float	z_pos_cmd_in "Z pos in from joint.*.motor-pos-cmd";
 pin in float	z_pos_fb_in "Z pos fb from stepgen.*.position-fb";
 
 // Output Pins
-pin out float 	z_pos_out "To stepgen.*.position-cmd";
-pin out float 	z_fb_out "Z Position Feedback to Axis";
+pin out float 	z_pos_cmd_out "To stepgen.*.position-cmd";
+pin out float 	z_pos_fb_out "Z Position Feedback to Axis";
 
 // Global Variables
 variable float offset;
@@ -42,6 +42,6 @@ FUNCTION(_) {
 	if(down){
 		offset -= cor_vel;
 	}
-	z_pos_out = z_pos_cmd_in+ offset;
-	z_fb_out = z_pos_fb_in + offset;
+	z_pos_cmd_out = z_pos_cmd_in + offset;
+	z_pos_fb_out = z_pos_cmd_in;
 	}	

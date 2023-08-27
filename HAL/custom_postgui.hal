@@ -9,3 +9,8 @@ net thc-enable           => thctab.led_thc_enable
 net feed-plus            <= hotkeys.feed_plus            => thctab.feed-dir-plus
 net feed-minus           <= hotkeys.feed_minus           => thctab.feed-dir-minus
 net adaptive_feed        => motion.adaptive-feed         <= thctab.feed-dir
+
+
+##z-control
+net up                   <= hotkeys.ohc_up
+net down                 <= hotkeys.ohc_down
