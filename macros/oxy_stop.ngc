@@ -1,18 +1,16 @@
 O<oxy_stop> SUB
 #<1> = #<_hal[thctab.safe_z]>
 
-G91
-
-M05
-M66 P9 L4 Q60
-F300
-M65 P00
-
-G0 Z[#<1>]
-(G92.2 Z0)
-
-G90
-
+o100 if [#<_task> EQ 1]
+    G91
+    M05
+    M66 P9 L4 Q60
+    F300
+    M65 P00
+    G0 Z[#<1>]
+    (G92.2 Z0)
+    G90
+o100 endif
 O<oxy_stop> ENDSUB
 
 M2

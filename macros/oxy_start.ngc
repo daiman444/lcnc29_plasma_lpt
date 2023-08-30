@@ -1,14 +1,16 @@
 O<oxy_start> SUB
 #<1> = #<_hal[thctab.z_speed]>
 
+o100 if [#<_task> EQ 1]
 (G91)
-(G38.3 Z-150 F500)
-(G92 Z0)
-(G0 Z4)
-M03 S100
-M64 P00
-M66 P9 L3 Q300
-G90
+    (G38.3 Z-150 F500)
+    (G92 Z0)
+    (G0 Z4)
+    M03 S100
+    M64 P00
+    M66 P9 L3 Q300
+    G90
+o100 endif
 O<oxy_start> ENDSUB
 
 M2
