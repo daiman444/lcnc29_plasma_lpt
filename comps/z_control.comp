@@ -20,15 +20,13 @@ pin in float	min_z "Min pos Z";
 pin in float 	velocity "Velocity";
 pin in float 	scale "Scale for velocity";
 pin in float	z_pos_cmd_in "Z pos in from joint.*.motor-pos-cmd";
-//pin in float	z_pos_fb_in "Z pos fb in from stepgen.3.position-fb";
+pin in float	z_pos_fb_in "Z pos fb in from stepgen.3.position-fb";
 
 // Output Pins
 pin out float 	z_pos_cmd_out "To stepgen.*.position-cmd";
 //pin out float 	z_pos_fb_out "Z Position Feedback to Axis";
 
 // Global Variables
-variable float start_pos;
-variable float offset;
 variable float cor_vel;
 
 function _;
@@ -38,21 +36,14 @@ function _;
 #include "rtapi_math.h"
 
 FUNCTION(_) {
-	start_pos = max_z;
-
+	cor_vel = 0;
 	if(z_pos_cmd_in <= max_z && z_pos_cmd_in >= min_z){
 		cor_vel = velocity * scale;
-		if(up){
-			offset += cor_vel;
+		if (up){
+			z_pos_cmd_out += cor_vel;
 		}
-		else if(down){
-			offset -= cor_vel;
+		if (down){
+			z_pos_cmd_out -= cor_vel;
 		}
-		else{
-			offset = 0;
-		}
-		start_pos += offset;
-		z_pos_cmd_out = start_pos;
-		//z_pos_fb_out = z_pos_fb_in + offset;
 	}
 }	
