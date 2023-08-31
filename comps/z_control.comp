@@ -27,6 +27,7 @@ pin out float 	z_pos_cmd_out "To stepgen.*.position-cmd";
 //pin out float 	z_pos_fb_out "Z Position Feedback to Axis";
 
 // Global Variables
+variable float start_pos;
 variable float offset;
 variable float cor_vel;
 
@@ -37,7 +38,9 @@ function _;
 #include "rtapi_math.h"
 
 FUNCTION(_) {
-	if(z_pos_cmd_in < max_z && z_pos_cmd_in > min_z){
+	start_pos = max_z;
+
+	if(z_pos_cmd_in <= max_z && z_pos_cmd_in >= min_z){
 		cor_vel = velocity * scale;
 		if(up){
 			offset += cor_vel;
@@ -48,8 +51,8 @@ FUNCTION(_) {
 		else{
 			offset = 0;
 		}
-
-		z_pos_cmd_out = z_pos_cmd_in + offset;
+		start_pos += offset;
+		z_pos_cmd_out = start_pos;
 		//z_pos_fb_out = z_pos_fb_in + offset;
 	}
 }	

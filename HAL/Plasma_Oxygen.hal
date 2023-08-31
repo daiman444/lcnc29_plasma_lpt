@@ -82,18 +82,19 @@ net y2dir <= stepgen.2.dir
 net y2enable joint.2.amp-enable-out => stepgen.2.enable
 net home-y2 => joint.2.home-sw-in
 
-setp stepgen.3.position-scale [JOINT_3]SCALE
+setp stepgen.3.position-scale  80           #[JOINT_3]SCALE
 setp stepgen.3.steplen 1
 setp stepgen.3.stepspace 0
 setp stepgen.3.dirhold 35000
 setp stepgen.3.dirsetup 35000
-setp stepgen.3.maxaccel [JOINT_3]STEPGEN_MAXACCEL
+setp stepgen.3.maxaccel 500                 #[JOINT_3]STEPGEN_MAXACCEL
 #net zpos-cmd joint.3.motor-pos-cmd => stepgen.3.position-cmd
 #net zpos-fb stepgen.3.position-fb => joint.3.motor-pos-fb
 net zstep <= stepgen.3.step
 net zdir <= stepgen.3.dir
-net zenable joint.3.amp-enable-out => stepgen.3.enable
-net home-z => joint.3.home-sw-in
+#net zenable joint.3.amp-enable-out => stepgen.3.enable
+setp stepgen.3.enable True
+#net home-z => joint.3.home-sw-in
 
 net estop-out <= iocontrol.0.user-enable-out
 net estop-out => iocontrol.0.emc-enable-in
