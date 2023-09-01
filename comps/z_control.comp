@@ -19,7 +19,7 @@ pin in float	max_z "Max pos Z";
 pin in float	min_z "Min pos Z";
 pin in float 	velocity "Velocity";
 pin in float 	scale "Scale for velocity";
-pin in float	z_pos_cmd_in "Z pos in from joint.*.motor-pos-cmd";
+pin in float	z_pos_cmd_in = 0 "Z pos in from joint.*.motor-pos-cmd";
 pin in float	z_pos_fb_in "Z pos fb in from stepgen.3.position-fb";
 
 // Output Pins
