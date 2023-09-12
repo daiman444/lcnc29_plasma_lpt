@@ -37,6 +37,9 @@ class Panel:
         self.defs = self.defaults[IniFile.vars]    
         self.b_g_o('main_box').set_sensitive(False)
         
+        # hide THC voltage buttons
+        self.b_g_o('gr_thc_voltage_widgets').hide()
+        
         get_ini_info = getiniinfo.GetIniInfo()
         prefs = preferences.preferences(get_ini_info.get_preference_file_path())
         theme_name = prefs.getpref("gtk_theme", "Follow System Theme", str)
